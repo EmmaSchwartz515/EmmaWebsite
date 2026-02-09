@@ -22,7 +22,7 @@
             $headers = get_headers($file_url);
 
             if ($headers && strpos($headers[0], '200 OK') !== false) {
-                echo "HTTP request to the XML file is possible.";
+                echo "HTTP request to the XML file is possible AWIA.";
             } else {
                 echo "HTTP request to the XML file is not possible.";
             }
