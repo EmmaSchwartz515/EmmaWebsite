@@ -8,8 +8,8 @@ h1 {
 
 .main {
     display: flexbox;
-    height: 100vh;
-    width: 100vw;
+    height: 40%;
+    width: 90%;
     border-radius: 10%;
     border-width: 2em;
     border-color: #7c8d4a;
