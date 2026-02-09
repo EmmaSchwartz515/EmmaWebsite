@@ -16,7 +16,7 @@ h1 {
     height: 40%;
     width: 90%;
     border-radius: 10%;
-    border: 10% dashed #7c8d4a;
+    border: 5px dashed #7c8d4a;
     align-self: center;
     align-items: center;
     justify-content: center;
