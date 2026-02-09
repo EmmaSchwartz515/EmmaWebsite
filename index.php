@@ -9,11 +9,13 @@
         <link rel="stylesheet" href="./index.css">
     </head>
     <body>
-        <h1>Emma Schwartz</h1>
-        <div classname="sect">
-            <h2 classname="title">About Me</h2>
-            <p classname="job-desc">[Computer Scientist]</p>
-            <p classname="about-me">Working as a <em>Web Service Analyst</em> for <strong>CSU Channel Islands</strong></p>
+        <div class="main">
+            <h1>Emma Schwartz</h1>
+            <div class="sect">
+                <h2 class="title">About Me</h2>
+                <p class="job-desc">[Computer Scientist]</p>
+                <p class="about-me">Working as a <em>Web Service Analyst</em> for <strong>CSU Channel Islands</strong></p>
+            </div>
         </div>
 
         <?php
