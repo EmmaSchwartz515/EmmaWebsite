@@ -16,9 +16,7 @@ h1 {
     height: 40%;
     width: 90%;
     border-radius: 10%;
-    border-width: 2em;
-    border-color: #7c8d4a;
-    border:2px
+    border: 2em dashed #7c8d4a;
     align-self: center;
     align-items: center;
     justify-content: center;
