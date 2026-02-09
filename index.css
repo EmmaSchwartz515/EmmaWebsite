@@ -15,7 +15,7 @@ h1 {
 .main {
     height: 40%;
     width: 90%;
-    border-radius: 10%;
+    border-radius: 5px;
     border: 5px dashed #7c8d4a;
     align-self: center;
     align-items: center;
