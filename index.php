@@ -6,7 +6,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
         <h1>Emma Schwartz</h1>
@@ -33,6 +33,6 @@
         ?>
 
         <h2></h2>
-        <script src="index.js" async defer></script>
+        <script src="./index.js" async defer></script>
     </body>
 </html>
