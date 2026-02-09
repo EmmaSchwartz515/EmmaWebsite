@@ -1,4 +1,4 @@
-html {
+:root {
     --b1: #7c8d4a;
     --b2: #3f5126;
     --b3: #a99271;
@@ -15,14 +15,14 @@ body {
 }
 
 h1 {
-    color: --b1;
+    color: var(--b1);
 }
 
 .main {
     height: 40%;
     width: 90%;
     border-radius: 5px;
-    border: 2px solid --b2;
+    border: 2px solid var(--b2);
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -32,6 +32,6 @@ h1 {
 }
 
 @keyframes mainIn {
-    0% {opacity: 0%; top:0cqw;}
+    0% {opacity: 0%; top:-200px;}
     100% {opacity: 100%; top:0px;}
 }
