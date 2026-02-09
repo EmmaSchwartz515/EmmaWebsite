@@ -16,7 +16,19 @@
         </div>
 
         <?php
-            echo "hello world!";
+            // PHP code to check for XML or anything else
+
+            $file_url = 'https://www.csuci.edu/news/rss.xml';
+            $headers = get_headers($file_url);
+
+            if ($headers && strpos($headers[0], '200 OK') !== false) {
+                echo "HTTP request to the XML file is possible.";
+            } else {
+                echo "HTTP request to the XML file is not possible.";
+            }
+
+            // Change the $file_url as needed.
+            // Code provided by Cory
         ?>
 
         <h2></h2>
