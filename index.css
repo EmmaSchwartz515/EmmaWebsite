@@ -13,4 +13,7 @@ h1 {
     border-width: 2em;
     border-color: #7c8d4a;
     align-self: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
