@@ -9,9 +9,10 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div classname="about-sect">
+        <h1>Emma Schwartz</h1>
+        <div classname="sect">
+            <h2 classname="title">About Me</h2>
             <p classname="job-desc">[Computer Scientist]</p>
-            <h1 classname="title">Emma Schwartz</h1>
             <p classname="about-me">Working as a <em>Web Service Analyst</em> for <strong>CSU Channel Islands</strong></p>
         </div>
 

@@ -1,3 +1,14 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 h1 {
-    color: blue
+    color: #7c8d4a;
+}
+
+.sect {
+    border-radius: 10%;
+    border-width: 2em;
+    border-color: #7c8d4a;
+    align-self: center;
 }
