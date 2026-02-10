@@ -30,8 +30,8 @@ h1 {
     justify-content: center;
     animation-name: mainIn;
     animation-duration: 2s;
-    padding-bottom: 5%;
     padding: 2.5%;
+    padding-bottom: 5%;
 }
 
 @keyframes mainIn {
