@@ -22,13 +22,15 @@ h1 {
     height: 40%;
     width: 90%;
     border-radius: 5px;
-    border: 2px solid var(--b2);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--b2);
     align-self: center;
     align-items: center;
     justify-content: center;
     animation-name: mainIn;
     animation-duration: 2s;
-
+    padding-bottom: 10%;
 }
 
 @keyframes mainIn {
