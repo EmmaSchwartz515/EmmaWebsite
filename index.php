@@ -11,7 +11,7 @@
     <body>
         <div class="main">
             <h1>Emma Schwartz</h1>
-            <div class="sect-dropdown"><button onclick="toggleSection(\'about\')" class="sect-dpdown-btn">About Me</button></div>
+            <div class="sect-dropdown"><button onclick="toggleSection('about')" class="sect-dpdown-btn">About Me</button></div>
             <div class="sect" id="about">
                 <p class="job-desc">[Computer Scientist]</p>
                 <p class="about-me">Working as a <em>Web Service Analyst</em> for <strong>CSU Channel Islands</strong></p>
