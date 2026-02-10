@@ -41,3 +41,11 @@ h1 {
     0% {opacity: 0%; top:-200px;}
     100% {opacity: 100%; top:0px;}
 }
+
+.sect {
+    display: none;
+}
+
+.show {
+    display: block;
+}
