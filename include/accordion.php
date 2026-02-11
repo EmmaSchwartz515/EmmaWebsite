@@ -19,6 +19,8 @@
         include("accordion-item.php");
 
 
+        
+
         $_GET["name"] = "Socials";
         $_GET["content"] = "
             <ul class=\"sect socials\">
@@ -34,6 +36,11 @@
                     </a>
                 </li>
             </ul>";
+        include("accordion-item.php");
+
+
+        $_GET["name"] = "contact";
+        $_GET["content"] = include("contact.php");
         include("accordion-item.php");
     ?>
 </ul>
