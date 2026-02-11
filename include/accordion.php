@@ -12,7 +12,9 @@
         $_GET["name"] = "Life Story";
         $_GET["content"] = "
             <p class=\"sect\">
-                I was born in San Francisco in 2008, then moved to Woodland Hills in 2012. When I was 8, I learned to code because...
+                I was born in San Francisco in 2008!
+                <img src=\"../images/san-francisco\" alt=\"Golden Gate Bridge in San Francisco\">
+                then moved to Woodland Hills in 2012. When I was 8, I learned to code because...
             </p>";
         include("accordion-item.php");
 
