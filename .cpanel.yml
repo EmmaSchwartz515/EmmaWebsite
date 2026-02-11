@@ -1,10 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/emmaschw/public_html/
-    - /bin/cp index.php $DEPLOYPATH
-    - /bin/cp index.css $DEPLOYPATH
-    - /bin/cp index.js $DEPLOYPATH
-    - /bin/cp accordion.php $DEPLOYPATH
-    - /bin/cp images $DEPLOYPATH
-    - /bin/cp include $DEPLOYPATH
+    - export DEPLOYPATH=/home/user/folderpath
+    - /bin/cp -R . $DEPLOYPATH
