@@ -54,6 +54,7 @@ h1 {
 
 .sect {
     display: none;
+    width: 70%
 }
 
 .sect-dpdown-btn {
@@ -132,8 +133,4 @@ footer {
     position: fixed;
     bottom: 0;
     background-color: #a99271;
-}
-
-img {
-    width: fit-content;
 }
