@@ -57,7 +57,7 @@ h1 {
 }
 
 .sect img {
-    object-fit: contain;
+    width: 100%;
 }
 
 .sect-dpdown-btn {
