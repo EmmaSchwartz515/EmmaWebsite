@@ -41,11 +41,7 @@
 
         $_GET["name"] = "contact";
         $_GET["content"] = "
-            <div class=\"sect\">
-                <?php
-                    include(\"contact.php\");
-                ?>
-            </div>";
+            <div class=\"sect\">" . include("contact.php") . "</div>";
         include("accordion-item.php");
     ?>
 </ul>
