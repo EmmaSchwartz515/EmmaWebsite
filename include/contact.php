@@ -1,11 +1,11 @@
 <div class="sect">
     <form action="" method="post">
         <label>First Name: </label>
-        <input type="text" name="first_name"><br>
+        <input type="text" name="first_name" placeholder="Alex"><br>
         <label>Last Name: </label>
-        <input type="text" name="last_name"><br>
+        <input type="text" name="last_name" placeholder="Smith"><br>
         <label>Email: </label>
-        <input type="text" name="email"><br>
+        <input type="text" name="email" placeholder="alexsmith@example.com"><br>
         <label>Message: </label>
         <br><textarea rows="5" name="message" cols="30"></textarea><br>
         <input type="submit" name="submit" value="Submit">
