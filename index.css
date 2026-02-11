@@ -1,11 +1,18 @@
 :root {
-    --b1: #7c8d4a;
-    --b2: #3f5126;
+    --b1: #4c5537;
+    --b2: #ffffff;
     --b3: #a99271;
+    --b4: #c5b99e;
+    --text: #334828;
+    --bg1: #ddcfb2;
+    --bg2: #fffcee;
+    background-color: #f2ede3;
+    overflow: hidden;
+    color: var(--text);
 }
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
 
     align-self: center;
     align-items: center;
@@ -15,6 +22,10 @@ body {
 
     height: 100vh;
     width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(var(--b4) .1em, transparent .1em), linear-gradient(90deg, var(--b4) .1em, transparent .1em);
+    background-size: 3em 3em;
 }
 
 h1 {
@@ -24,17 +35,16 @@ h1 {
 .main {
     height: 40%;
     width: 90%;
-    border-radius: 5px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--b2);
+    border-radius: 20px;
     align-self: center;
     align-items: center;
     justify-content: center;
     animation-name: mainIn;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     padding: 2.5%;
     padding-bottom: 5%;
+    overflow:scroll;
+    background-color: var(--bg2);
 }
 
 @keyframes mainIn {
@@ -46,6 +56,57 @@ h1 {
     display: none;
 }
 
+.sect-dpdown-btn {
+    width: 100%;
+    text-align: left;
+    background: var(--bg1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    display: table;
+}
+
+.collapse {
+    float: right;
+}
+
+.hidden {
+    opacity: 0%;
+}
+
+.open-btn {
+    margin-bottom: 0;
+}
+
+.decorative-image-bottom-right {
+    float: right;
+    position: absolute;
+    max-width: 5%;
+    bottom: 0;
+    right: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
 .show {
     display: block;
+}
+
+.socials.show {
+    display: flex;
+}
+
+.socials li {
+    padding: 20px;
+}
+
+.socials img {
+    max-width: 6em;
+    min-height: 6em;
 }
