@@ -10,7 +10,7 @@ function toggleSectionOld(id) {
     plusminus.classList.toggle("fa-minus");
 }
 
-function toggleSectionOld(btn) {
+function toggleSection(btn) {
     var region = btn.parentNode.parentNode;
     var sect = region.childNodes[3];
     var plusminus = btn.childNodes[1].childNodes[1].childNodes[1];
