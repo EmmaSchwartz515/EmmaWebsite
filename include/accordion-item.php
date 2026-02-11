@@ -9,9 +9,7 @@
             </div>
         </button>
     </div>
-    <div class="sect">
-        <?php
-            echo $_GET["content"];
-        ?>
-    </div>
+    <?php
+        echo $_GET["content"];
+    ?>
 </li>
