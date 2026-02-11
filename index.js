@@ -17,11 +17,7 @@ function toggleSection(btn) {
     
     var region = btn.parentNode.parentNode;
     var sect = region.childNodes[3];
-    var plusminus = btn.childNodes[1].childNodes[1].childNodes[1];
-
-    console.log(btn.childNodes[1]);
-    console.log(btn.childNodes[1].childNodes[1]);
-    console.log(plusminus);
+    var plusminus = btn.childNodes[1].childNodes[1];
     sect.classList.toggle("show");
     btn.classList.toggle("open-btn");
     plusminus.classList.toggle("fa-plus");
