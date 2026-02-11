@@ -112,12 +112,22 @@ ul {
 }
 
 header {
+    width: 100%;
     position: fixed;
     top: 0;
     background-color: #a99271;
 }
 
+.topnav a {
+    color: #334828;
+}
+
+.topnav .active {
+    color: #715641;
+}
+
 footer {
+    width: 100%;
     position: fixed;
     bottom: 0;
     background-color: #a99271;
