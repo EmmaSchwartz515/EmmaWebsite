@@ -10,13 +10,13 @@
     </head>
     <body>
         <?php
-            include("include/header.php");
+            //include("include/header.php");
         ?>
         <div class="main">
             <h1>Emma Schwartz</h1>
             <?php
                 include("include/accordion.php");
-                include("include/contact.php");
+                //include("include/contact.php");
             ?>
         </div>
 

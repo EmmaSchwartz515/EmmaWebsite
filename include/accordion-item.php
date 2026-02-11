@@ -11,5 +11,5 @@
     </div>
     <?php
         echo $_GET["content"];
-    ?>
+    ?> 
 </li>
