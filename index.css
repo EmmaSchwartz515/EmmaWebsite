@@ -133,3 +133,7 @@ footer {
     bottom: 0;
     background-color: #a99271;
 }
+
+img {
+    width: fit-content;
+}
