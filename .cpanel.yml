@@ -7,4 +7,4 @@ deployment:
     - /bin/cp index.js $DEPLOYPATH
     - /bin/cp accordion.php $DEPLOYPATH
     - /bin/cp images $DEPLOYPATH
-    - echo "DEPLOYMENT RAN" > /home/emmaschw/deploy-test.txt
+    - /bin/cp include $DEPLOYPATH
