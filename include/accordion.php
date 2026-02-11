@@ -2,20 +2,20 @@
     <?php
         $_GET["name"] = "Quick Facts";
         $_GET["content"] = "
-            <p class=\"sect\">
+            <div class=\"sect\">
                 [Computer Scientist]<br>
                 Working as a <em>Web Service Analyst</em>
                 for <strong>CSU Channel Islands</strong>
-            </p>";
+            </div>";
         include("accordion-item.php");
 
         $_GET["name"] = "Life Story";
         $_GET["content"] = "
-            <p class=\"sect\">
+            <div class=\"sect\">
                 I was born in San Francisco in 2008!
                 <img src=\"../images/san-francisco.jpg\" alt=\"Golden Gate Bridge in San Francisco\">
                 then moved to Woodland Hills in 2012. When I was 8, I learned to code because...
-            </p>";
+            </div>";
         include("accordion-item.php");
 
 
