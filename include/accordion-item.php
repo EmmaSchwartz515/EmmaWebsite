@@ -14,4 +14,6 @@
             echo $_GET["content"];
         ?>
     </div>
+
+    <script src="../index.js" async defer></script>
 </li>
