@@ -1,6 +1,6 @@
 <li>
     <div class="sect-dropdown">
-        <button onclick="toggleSection()" class="sect-dpdown-btn">
+        <button onclick="toggleSection(self)" class="sect-dpdown-btn">
             <?php
                 echo $_GET["name"];
             ?>
