@@ -18,7 +18,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    display: block;
+    display: flex;
 
     height: 100vh;
     width: 100vw;
@@ -109,4 +109,16 @@ ul {
 .socials img {
     max-width: 6em;
     min-height: 6em;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    background-color: #a99271;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #a99271;
 }
