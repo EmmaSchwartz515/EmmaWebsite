@@ -13,6 +13,7 @@
             <h1>Emma Schwartz</h1>
             <?php
                 include("accordion.php");
+                echo "Hello :)";
             ?>
             <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
         </div>
