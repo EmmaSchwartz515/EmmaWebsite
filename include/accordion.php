@@ -6,7 +6,8 @@
                 [Computer Scientist]<br>
                 Working as a <em>Web Service Analyst</em>
                 for <strong>CSU Channel Islands</strong>
-            </div>";
+            </div>
+        ";
         include("accordion-item.php");
 
         $_GET["name"] = "Life Story";
@@ -15,7 +16,8 @@
                 I was born in San Francisco in 2008!
                 <img src=\"../images/san-francisco.jpg\" alt=\"Golden Gate Bridge in San Francisco\">
                 then moved to Woodland Hills in 2012. When I was 8, I learned to code because...
-            </div>";
+            </div>
+        ";
         include("accordion-item.php");
 
 
@@ -35,12 +37,22 @@
                         <img src=\"../images/linkedin-logo.png\" alt=\"LinkedIn Logo, Clickable.\">
                     </a>
                 </li>
-            </ul>";
+            </ul>
+        ";
         include("accordion-item.php");
 
 
         $_GET["name"] = "contact";
         $_GET["content"] = "contact.php";
         include("accordion-item-from-php.php");
+
+
+        $_GET["name"] = "projects";
+        $_GET["content"] = "
+            <div class=\"sect\">
+                <a href=\"../regexcheck/index.php\">Regex Checker</a>
+            </div>
+        ";
+        include("accordion-item.php");
     ?>
 </ul>
