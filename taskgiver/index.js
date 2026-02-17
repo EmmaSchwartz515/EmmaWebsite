@@ -130,7 +130,7 @@ function updateLeaderboard() {
     if (USER_tags_points.keys().length == 0) {return}
 
     for (const tag of USER_tags_points.keys()) {
-        console.log("\"", tag, "\" : ", USER_tags_points[tag], "\"")
+        console.log(tag, USER_tags_points.get(tag))
     }
 }
 
