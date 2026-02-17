@@ -23,10 +23,8 @@
             if ($outp != "[") {
                 $outp .= ",";
             }
-            $outp .= '{"ID":"' . $rs["id"] . '",';
-            $outp .= '"a":"' . $rs["a"] . '",';
-            $outp .= '"b":"' . $rs["b"] . '"}';
-            $outp .= '"c":"' . $rs["c"] . '"}';
+            $outp .= '{"text":"' . $rs["text"] . '",';
+            $outp .= '"tags":"' . $rs["tags"] . '"}';
         }
     $outp .= "]";
     
