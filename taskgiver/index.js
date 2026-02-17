@@ -37,7 +37,7 @@ function populateTasks() {
 
                 console.log(table[i].text, table[i].tags);
 
-                var tagsArray = table[i].tags.split(",");
+                //var tagsArray = table[i].tags.split(",");
 
                 makeTask(table[i].text, tagsArray);
             }
