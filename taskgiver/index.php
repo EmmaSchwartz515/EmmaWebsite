@@ -19,10 +19,10 @@
         </div>
 
         <?php
-            $servername = "emmaschw_tasks";
+            $servername = "localhost";
             $username = "emmaschw_emma";
             $password = "Zydvy3-noswyx-tixzyk";
-            $dbname = "tasks";
+            $dbname = "emmaschw_tasks";
 
             // Create connection
             try {
