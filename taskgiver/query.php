@@ -3,10 +3,11 @@
     $username = "emmaschw_emma";
     $password = "Zydvy3-noswyx-tixzyk";
     $dbname = "emmaschw_tasks";
+    $table = "funnytable";
 
     // Create connection
     try {
-        $conn = new mysqli($servername, $username, $password);
+        $conn = new mysqli($servername, $username, $password, $dbname);
     } catch (Exception $e) {
         die("". $e->getMessage());
     }
@@ -15,7 +16,7 @@
     die("Connection failed: " . $conn->connect_error);
     }
     
-    $result = mysqli_query($conn,"SELECT * FROM $dbname");
+    $result = mysqli_query($conn,"SELECT * FROM $table");
     
     echo json_encode($result);
 ?>
