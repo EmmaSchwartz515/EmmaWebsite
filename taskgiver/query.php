@@ -17,16 +17,15 @@
     }
     
     $result = mysqli_query($conn,"SELECT * FROM $table");
-
-    $outp = "[";
-        while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-            if ($outp != "[") {
-                $outp .= ",";
-            }
-            $outp .= '{"text":"' . $rs["text"] . '",';
-            $outp .= '"tags":"' . $rs["tags"] . '"}';
-        }
-    $outp .= "]";
     
-    echo json_encode($outp);
+    $arr = array();
+
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        $row_array['text'] = $row['text'];
+        $row_array['tags'] = $row['tags'];
+
+        array_push($arr, $row_array);
+    }
+
+    echo json_encode($arr);
 ?>
