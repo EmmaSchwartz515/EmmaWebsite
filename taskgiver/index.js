@@ -25,14 +25,14 @@ function makeTask(text, tags) {
 }
 
 function populateTasks() {
-    tasks.push(makeTask("Go to the grocery store", ["in-person", "care", "shop"]));
-    tasks.push(makeTask("Go to the mall", ["in-person", "shop"]));
-    tasks.push(makeTask("Go to the diner", ["in-person", "shop"]));
-    tasks.push(makeTask("Go to the game store", ["in-person", "game", "shop"]));
-    tasks.push(makeTask("Go to the library", ["in-person", "chill"]));
-    tasks.push(makeTask("Play webfishing", ["online", "game", "chill", "shop"]));
-    tasks.push(makeTask("Go on this minecraft server", ["online", "game"]));
-    tasks.push(makeTask("Go to this website", ["online", "web"]));
+    $.ajax({
+        type: "GET",
+        url: 'query.php',
+        dataType: "json",
+        success: function(res) {
+            console.log(res);
+        }
+    });
 }
 
 var favor_out_of_comfort_zone = true;

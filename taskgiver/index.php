@@ -18,25 +18,6 @@
             <div><span id="counter">0</span> tasks completed</div>
         </div>
 
-        <?php
-            $servername = "localhost";
-            $username = "emmaschw_emma";
-            $password = "Zydvy3-noswyx-tixzyk";
-            $dbname = "emmaschw_tasks";
-
-            // Create connection
-            try {
-                $conn = new mysqli($servername, $username, $password, $dbname);
-            } catch (Exception $e) {
-                die("". $e->getMessage());
-            }
-            // Check connection
-            if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-            }
-            echo "Connected successfully";
-        ?>
-
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
         <script src="./index.js" async defer></script>
     </body>
