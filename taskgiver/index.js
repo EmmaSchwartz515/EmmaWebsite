@@ -33,7 +33,7 @@ function populateTasks() {
             console.log(this.responseText);
             var table = JSON.parse(this.responseText);
             for (var i = 0; i < table.length; i++) {
-                print(table[i].tags, table[i].text);
+                console.log(table[i].tags, table[i].text);
 
                 var tagsArray = table[i].tags.split(",");
 
