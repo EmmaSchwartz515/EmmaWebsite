@@ -27,8 +27,8 @@ function makeTask(text, tags) {
 function populateTasks() {
     const xhttp = new XMLHttpRequest();
 
-    xhttp.onload = function(_, json) {
-        console.log(json);
+    xhttp.onload = function() {
+        console.log(this.responseText);
     }
 
     xhttp.open("GET", 'query.php', true);
