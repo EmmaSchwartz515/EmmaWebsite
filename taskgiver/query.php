@@ -3,7 +3,6 @@
     $username = "emmaschw_emma";
     $password = "Zydvy3-noswyx-tixzyk";
     $dbname = "emmaschw_tasks";
-    $table = "tasks";
 
     // Create connection
     try {
@@ -15,17 +14,36 @@
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
-    
-    $result = mysqli_query($conn,"SELECT * FROM $table");
-    
-    $arr = array();
 
-    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-        $row_array['text'] = $row['text'];
-        $row_array['tags'] = $row['tags'];
+    $table = $_GET["table"];
 
-        array_push($arr, $row_array);
+    if ($table == "tasks") {
+        $result = mysqli_query($conn,"SELECT * FROM $table");
+        
+        $arr = array();
+
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            $row_array['text'] = $row['text'];
+            $row_array['tags'] = $row['tags'];
+
+            array_push($arr, $row_array);
+        }
+
+        echo json_encode($arr);
+    } else {
+        $result = mysqli_query($conn,"SELECT * FROM $table");
+        
+        $arr = array();
+
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            $row_array['username'] = $row['username'];
+            $row_array['password'] = $row['password'];
+            $row_array['tags_points'] = $row['tags_points'];
+            $row_array['tasks_completed'] = $row['tasks_completed'];
+
+            array_push($arr, $row_array);
+        }
+
+        echo json_encode($arr);
     }
-
-    echo json_encode($arr);
 ?>

@@ -4,12 +4,20 @@ class Task {
     id = "";
 }
 
-var tags_points = new Map();
+var USER_username = ""; // USER DATA
+
+var USER_tags_points = new Map(); // USER DATA
+
+var USER_tasks_completed = []; // USER DATA
+
+
+// TODO : Confetti after each task completion
+// TODO : Leaderboard
+// TODO : Move data to online
+// TODO : Update data online
 
 var counter = document.getElementById("counter");
 var curr_task = document.getElementById("currtask");
-
-var tasks_completed = 0;
 
 var tasks = [];
 
@@ -19,7 +27,9 @@ function makeTask(text, tags) {
     task.tags = tags;
 
     for (const tag of tags) {
-        tags_points.set(tag, 0);
+        if (!USER_tags_points.has(tag)) {
+            USER_tags_points.set(tag, 0);
+        }
     }
 
     tasks.push(task);
@@ -30,12 +40,9 @@ function populateTasks() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
             var table = JSON.parse(this.responseText);
             for (var i = 0; i < table.length; i++) {
                 var tagsArray = table[i].tags.split(",");
-
-                console.log(tagsArray);
 
                 makeTask(table[i].text, tagsArray);
                 
@@ -44,7 +51,7 @@ function populateTasks() {
         }
     }
 
-    xhttp.open("GET", './query.php', true);
+    xhttp.open("GET", './query.php?table=tasks', true);
     xhttp.send();
 }
 
@@ -57,7 +64,7 @@ function getBestTag(lowestOrHighest) { // -1 for lowest, 1 for highest
     var curr_tag = "";
 
     
-    for (const [tag, tag_points] of tags_points) {
+    for (const [tag, tag_points] of USER_tags_points) {
         if (curr == -1 || lowestOrHighest * tag_points > lowestOrHighest * curr) {
             curr = tag_points;
             curr_tag = tag;
@@ -87,7 +94,7 @@ function giveTask() {
     currentTask = getTasksFromTag(favored_tag);
 
     if (currentTask == null) {
-        console.log("Wha");
+        console.error("Error at line 97");
     } else {
         curr_task.textContent = currentTask.text;
     }
@@ -95,26 +102,63 @@ function giveTask() {
 
 function completed() {
     for (const tag of currentTask.tags) {
-        tags_points.set(tag, tags_points.get(tag) + 1);
+        USER_tags_points.set(tag, USER_tags_points.get(tag) + 1);
     }
 
+    USER_tasks_completed.push(currentTask);
+
+    counter.textContent = USER_tasks_completed.length;
+
+    updateLeaderboard();
+
     giveTask();
-
-    tasks_completed++;
-
-    counter.textContent = tasks_completed;
 }
 
 function notCompleted() {
     for (const tag of currentTask.tags) {
-        tags_points.set(tag, tags_points.get(tag) + 0.25);
+        USER_tags_points.set(tag, USER_tags_points.get(tag) + 0.25);
     }
 
+    updateLeaderboard();
+
     giveTask();
+}
 
-    tasks_completed++;
+function updateLeaderboard() {
+    for (const tag of USER_tags_points.keys) {
+        console.log("\"", tag, "\" : ", USER_tags_points[tag], "\"")
+    }
+}
 
-    counter.textContent = tasks_completed;
+function loadData(username) {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var table = JSON.parse(this.responseText);
+            for (var i = 0; i < table.length; i++) {
+                var user = table[i].user;
+                if (user == username) {
+                    USER_username = user;
+
+                    USER_tags_points = new Map(Object.entries(table[i].tags_points));
+                    updateLeaderboard();
+
+                    USER_tasks_completed = JSON.parse(table[i].tags_points);
+                    counter.textContent = USER_tasks_completed.length;
+                }
+            }
+        }
+    }
+
+    xhttp.open("GET", './query.php?table=user_data', true);
+    xhttp.send();
+}
+
+function saveData(username, field, data) {
+
 }
 
 populateTasks();
+
+loadData("user");
