@@ -33,9 +33,9 @@ function populateTasks() {
             console.log(this.responseText);
             var table = JSON.parse(this.responseText);
             for (var i = 0; i < table.length; i++) {
-                console.log(table[i].tags, table[i].text);
-
                 var tagsArray = table[i].tags.split(",");
+
+                console.log(tagsArray);
 
                 makeTask(table[i].text, tagsArray);
             }
