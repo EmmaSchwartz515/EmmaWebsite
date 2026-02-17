@@ -31,7 +31,7 @@ function populateTasks() {
         if (this.readyState == 4 && this.status == 200) {
             var table = JSON.parse(this.responseText);
             for (var i = 0; i < table.length; i++) {
-                makeTask(table[i].text, table[i].tags.split(", "));
+                console.log(table[i].text, table[i].tags);
             }
         }
     }
