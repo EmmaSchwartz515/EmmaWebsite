@@ -25,7 +25,8 @@ function makeTask(text, tags) {
 }
 
 function populateTasks() {
-    $.ajax({
+    const xhttp = new XMLHttpRequest();
+    xhttp.open({
         type: "GET",
         url: 'query.php',
         dataType: "json",
@@ -63,8 +64,6 @@ function getTasksFromTag(tag) {
 }
 
 function giveTask() {
-    console.log(tags_points);
-
     var favored_tag;
     
     if (favor_out_of_comfort_zone) {
@@ -76,13 +75,10 @@ function giveTask() {
     currentTask = getTasksFromTag(favored_tag);
 
     curr_task.textContent = currentTask.text;
-
-    console.log(favored_tag);
 }
 
 function completed() {
     for (const tag of currentTask.tags) {
-        console.log(tag);
         tags_points.set(tag, tags_points.get(tag) + 1);
     }
 
@@ -95,7 +91,6 @@ function completed() {
 
 function notCompleted() {
     for (const tag of currentTask.tags) {
-        console.log(tag);
         tags_points.set(tag, tags_points.get(tag) + 0.25);
     }
 
