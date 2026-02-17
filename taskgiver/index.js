@@ -111,6 +111,8 @@ function completed() {
 
     updateLeaderboard();
 
+    console.log(USER_tags_points, USER_tasks_completed);
+
     giveTask();
 }
 
