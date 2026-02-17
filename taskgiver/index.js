@@ -33,13 +33,9 @@ function populateTasks() {
             console.log(this.responseText);
             var table = JSON.parse(this.responseText);
             for (var i = 0; i < table.length; i++) {
-                console.log(table[i]);
+                var tagsArray = table[i].tags.split(",");
 
-                console.log(table[i].text, table[i].tags);
-
-                //var tagsArray = table[i].tags.split(",");
-
-                //makeTask(table[i].text, tagsArray);
+                makeTask(table[i].text, tagsArray);
             }
         }
     }
