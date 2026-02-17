@@ -17,6 +17,18 @@
     }
     
     $result = mysqli_query($conn,"SELECT * FROM $table");
+
+    $outp = "[";
+        while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
+            if ($outp != "[") {
+                $outp .= ",";
+            }
+            $outp .= '{"ID":"' . $rs["id"] . '",';
+            $outp .= '"a":"' . $rs["a"] . '",';
+            $outp .= '"b":"' . $rs["b"] . '"}';
+            $outp .= '"c":"' . $rs["c"] . '"}';
+        }
+    $outp .= "]";
     
     echo json_encode($result);
 ?>
