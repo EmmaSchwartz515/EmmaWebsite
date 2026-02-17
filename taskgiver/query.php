@@ -30,5 +30,5 @@
         }
     $outp .= "]";
     
-    echo json_encode($result + "WAHHH ");
+    echo json_encode($result . "WAHHH ");
 ?>
