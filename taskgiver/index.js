@@ -27,7 +27,7 @@ function makeTask(text, tags) {
 function populateTasks() {
     const xhttp = new XMLHttpRequest();
 
-    xhttp.onload = function(json) {
+    xhttp.onload = function(_, json) {
         console.log(json);
     }
 
@@ -73,7 +73,11 @@ function giveTask() {
 
     currentTask = getTasksFromTag(favored_tag);
 
-    curr_task.textContent = currentTask.text;
+    if (currentTask == null) {
+        console.log("Wha");
+    } else {
+        curr_task.textContent = currentTask.text;
+    }
 }
 
 function completed() {
