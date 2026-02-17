@@ -21,7 +21,8 @@ function makeTask(text, tags) {
     for (const tag of tags) {
         tags_points.set(tag, 0);
     }
-    return task;
+
+    tasks.push(task);
 }
 
 function populateTasks() {
@@ -29,9 +30,14 @@ function populateTasks() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             var table = JSON.parse(this.responseText);
             for (var i = 0; i < table.length; i++) {
                 console.log(table[i].text, table[i].tags);
+
+                var tagsArray = table[i].tags.split(",");
+
+                makeTask(table[i].text, tagsArray);
             }
         }
     }
@@ -111,4 +117,4 @@ function notCompleted() {
 
 populateTasks();
 
-giveTask()
+giveTask();
