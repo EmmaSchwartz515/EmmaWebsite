@@ -144,13 +144,10 @@ function loadData(username) {
             for (var i = 0; i < table.length; i++) {
                 var user = table[i].username;
 
-                console.log("CHECK1", user, username);
                 if (user == username) {
                     USER_username = user;
 
-                    console.log("CHECK2");
-
-                    USER_tags_points = new Map(Object.entries(table[i].tags_points));
+                    USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
                     updateLeaderboard();
 
                     USER_tasks_completed = JSON.parse(table[i].tags_points);
