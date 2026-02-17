@@ -28,7 +28,7 @@ function populateTasks() {
     const xhttp = new XMLHttpRequest();
 
     xhttp.onload = function() {
-        console.log(this.responseText);
+        console.log(xhttp.responseText);
     }
 
     xhttp.open("GET", 'query.php', true);
