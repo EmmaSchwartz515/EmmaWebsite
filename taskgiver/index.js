@@ -26,14 +26,13 @@ function makeTask(text, tags) {
 
 function populateTasks() {
     const xhttp = new XMLHttpRequest();
-    xhttp.open({
-        type: "GET",
-        url: 'query.php',
-        dataType: "json",
-        success: function(res) {
-            console.log(res);
-        }
-    });
+
+    xhttp.onload = function(json) {
+        console.log(json);
+    }
+
+    xhttp.open("GET", 'query.php', true);
+    xhttp.send();
 }
 
 var favor_out_of_comfort_zone = true;
