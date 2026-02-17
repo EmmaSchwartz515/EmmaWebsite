@@ -6,7 +6,7 @@
 
     // Create connection
     try {
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($servername, $username, $password);
     } catch (Exception $e) {
         die("". $e->getMessage());
     }
