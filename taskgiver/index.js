@@ -24,16 +24,15 @@ function makeTask(text, tags) {
     return task;
 }
 
-function test(response) {
-    console.log(response);
-}
-
 function populateTasks() {
     const xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            test(this.responseText);
+            var table = JSON.parse(this.responseText);
+            for (var i = 0; i < table.length; i++) {
+                makeTask(table[i].text, table[i].tags.split(", "));
+            }
         }
     }
 

@@ -3,7 +3,7 @@
     $username = "emmaschw_emma";
     $password = "Zydvy3-noswyx-tixzyk";
     $dbname = "emmaschw_tasks";
-    $table = "funnytable";
+    $table = "tasks";
 
     // Create connection
     try {
