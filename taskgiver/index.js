@@ -137,16 +137,13 @@ function updateLeaderboard() {
 function loadData(username) {
     const xhttp = new XMLHttpRequest();
 
-    console.log("CHECK1");
-
     xhttp.onreadystatechange = function() {
-        console.log("CHECK2");
-
         if (this.readyState == 4 && this.status == 200) {
             var table = JSON.parse(this.responseText);
 
-            console.log("CHECK3");
             for (var i = 0; i < table.length; i++) {
+                console.log("CHECK4");
+
                 var user = table[i].user;
                 if (user == username) {
                     USER_username = user;
