@@ -39,7 +39,7 @@ function populateTasks() {
 
                 //var tagsArray = table[i].tags.split(",");
 
-                makeTask(table[i].text, tagsArray);
+                //makeTask(table[i].text, tagsArray);
             }
         }
     }
