@@ -24,14 +24,20 @@ function makeTask(text, tags) {
     return task;
 }
 
+function test(response) {
+    console.log(response);
+}
+
 function populateTasks() {
     const xhttp = new XMLHttpRequest();
 
-    xhttp.onload = function() {
-        console.log(xhttp.responseText);
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            test(this.responseText);
+        }
     }
 
-    xhttp.open("GET", 'query.php', true);
+    xhttp.open("GET", './query.php', true);
     xhttp.send();
 }
 
