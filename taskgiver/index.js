@@ -142,7 +142,7 @@ function loadData(username) {
             var table = JSON.parse(this.responseText);
 
             for (var i = 0; i < table.length; i++) {
-                var user = table[i].user;
+                var user = table[i].username;
 
                 console.log("CHECK1", user, username);
                 if (user == username) {
