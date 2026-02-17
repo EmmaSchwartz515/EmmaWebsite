@@ -38,6 +38,8 @@ function populateTasks() {
                 console.log(tagsArray);
 
                 makeTask(table[i].text, tagsArray);
+                
+                giveTask();
             }
         }
     }
@@ -116,5 +118,3 @@ function notCompleted() {
 }
 
 populateTasks();
-
-giveTask();
