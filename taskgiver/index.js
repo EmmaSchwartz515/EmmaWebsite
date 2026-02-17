@@ -161,6 +161,6 @@ function saveData(username, field, data) {
 
 }
 
-populateTasks();
-
 loadData("user");
+
+populateTasks();
