@@ -4,9 +4,9 @@
     $db_password = "Zydvy3-noswyx-tixzyk";
     $db_dbname = "emmaschw_tasks";
 
-    $user_username = $_POST['user'];
-    $user_tags_points = $_POST['tags_points'];
-    $user_tasks_completed = $_POST['tasks_completed'];
+    $user_username = $_GET['user'];
+    $user_tags_points = $_GET['tags_points'];
+    $user_tasks_completed = $_GET['tasks_completed'];
 
     // Create connection
     try {

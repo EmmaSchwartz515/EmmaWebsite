@@ -146,6 +146,8 @@ function getData(username) {
                 var user = table[i].username;
 
                 if (user == username) {
+                    console.log("Found user!");
+
                     USER_username = user;
 
                     USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
@@ -197,11 +199,11 @@ function saveData() {
     
     console.log(url);
 
-    xhttp.open("POST", url, true);
+    xhttp.open("GET", url, true);
     xhttp.send();
 }
 
-username = getUsername();
+var username = getUsername();
 
 getData(username);
 
