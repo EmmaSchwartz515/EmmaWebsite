@@ -24,7 +24,7 @@
 
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         if ($row['username'] == $user_username) {
-            $sql = "UPDATE $table SET tags_points='$user_tags_points', tasks_completed='$user_tasks_completed' WHERE username='$$user_username'";
+            $sql = "UPDATE $table SET tags_points='$user_tags_points', tasks_completed='$user_tasks_completed' WHERE username='$user_username'";
             mysqli_query($conn, $sql);
             echo "Done";
             return;
