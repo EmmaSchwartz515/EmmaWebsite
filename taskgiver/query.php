@@ -30,7 +30,7 @@
         }
 
         echo json_encode($arr);
-    } else {
+    } else if ($table == "user_data") {
         $result = mysqli_query($conn,"SELECT * FROM $table");
         
         $arr = array();

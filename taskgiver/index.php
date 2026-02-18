@@ -9,14 +9,18 @@
         <link rel="stylesheet" href="../index.css">
     </head>
     <body>
-        <div class="main">
+        <!-- <div class="main">
             <h1>Task Giver</h1>
             <h2>Current Task:</h2>
             <div id="currtask"></div>
             <button onclick="completed()">did it</button>
             <button onclick="notCompleted()">didn't do it</button>
             <div><span id="counter">0</span> tasks completed</div>
-        </div>
+        </div> -->
+
+        <?php
+            include("login.php");
+        ?>
 
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
         <script src="./index.js" async defer></script>
