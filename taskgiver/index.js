@@ -82,7 +82,7 @@ function getTasksFromTag(tag) {
         }
     }
 
-    return tasks[0];
+    return tasks.first
 }
 
 function giveTask() {
@@ -94,9 +94,9 @@ function giveTask() {
         favored_tag = getBestTag(1); // get tag with lowest points
     }
 
-    tasks.splice(tasks.indexOf(currentTask), 1);
-
     currentTask = getTasksFromTag(favored_tag);
+
+    tasks.splice(tasks.indexOf(currentTask));
 
     if (currentTask == null) {
         console.error("Error at line 97: Current Task is Null!");
@@ -163,7 +163,7 @@ function getData(username) {
                     USER_tasks_completed = JSON.parse(table[i].tags_points);
 
                     for (task in USER_tasks_completed) {
-                        tasks.splice(tasks.indexOf(task), 1);
+                        tasks.splice(tasks.indexOf(task));
                     }
 
                     counter.textContent = USER_tasks_completed.length;
