@@ -157,8 +157,12 @@ function getData(username) {
 
                     USER_tasks_completed = JSON.parse(table[i].tags_points);
                     counter.textContent = USER_tasks_completed.length;
+
+                    return;
                 }
             }
+
+            console.log("Could not find user.");
         }
     }
 
@@ -201,7 +205,7 @@ function saveData() {
 }
 
 function setup() {
-    var username = getUsername();
+    var username = getUsername().trim();
 
     if (username == undefined) {
         console.error("Username not defined!");
