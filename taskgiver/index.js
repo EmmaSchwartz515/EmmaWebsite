@@ -110,7 +110,7 @@ function completed() {
 
     updateLeaderboard();
 
-    console.log(USER_tags_points, USER_tasks_completed);
+    //console.log(USER_tags_points, USER_tasks_completed);
 
     giveTask();
 }
@@ -130,9 +130,9 @@ function updateLeaderboard() {
 
     if (USER_tags_points.keys().length == 0) {return}
 
-    for (const tag of USER_tags_points.keys()) {
-        console.log(tag, USER_tags_points.get(tag))
-    }
+    //for (const tag of USER_tags_points.keys()) {
+        //console.log(tag, USER_tags_points.get(tag))
+    //}
 }
 
 function getData(username) {
@@ -192,12 +192,13 @@ function saveData() {
         }
     }
 
-    var url = './updateuser.php?user=' + USER_username + "&tags_points=" + tags_points_json + "&tasks_completed=" + tasks_completed_json
+    var url = './updateuser.php?user=' + USER_username + "&tags_points=" + tags_points_json + "&tasks_completed="
+        + tasks_completed_json;
+    
+    console.log(url);
 
     xhttp.open("POST", url, true);
     xhttp.send();
-
-    // PHP put data into SQL
 }
 
 username = getUsername();
