@@ -204,15 +204,19 @@ function saveData() {
     xhttp.send();
 }
 
-var username = getUsername();
+function setup() {
+    var username = getUsername();
 
-if (username == undefined) {
-    console.error("Username not defined!");
-    return;
+    if (username == undefined) {
+        console.error("Username not defined!");
+        return;
+    }
+
+    console.log(username);
+
+    getData(username);
+
+    populateTasks();
 }
 
-console.log(username);
-
-getData(username);
-
-populateTasks();
+setup();
