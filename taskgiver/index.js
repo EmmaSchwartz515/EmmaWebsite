@@ -169,6 +169,7 @@ function getUsername() {
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
             return this.responseText;
         }
     }
@@ -204,6 +205,11 @@ function saveData() {
 }
 
 var username = getUsername();
+
+if (username == undefined) {
+    console.error("Username not defined!");
+    return;
+}
 
 console.log(username);
 
