@@ -62,7 +62,7 @@
                                 }
                             }
 
-                            mysqli_query($conn, 'INSERT INTO $table ($user_username, $user_pass, "[{}]", "[]")');
+                            mysqli_query($conn, 'INSERT INTO $table ($user_username, $user_pass, "{}", "{}")');
                         }
                     ?>
                 </p>
