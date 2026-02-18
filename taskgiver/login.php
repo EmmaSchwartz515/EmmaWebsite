@@ -39,12 +39,11 @@
                         }
 
                         $table = "user_data";
+                        $result = mysqli_query($conn,"SELECT * FROM $table");
 
                         if (isset($_POST['login'])) {
                             $user_username = $_POST['username'];
                             $user_pass = $_POST['password'];
-                        
-                            $result = mysqli_query($conn,"SELECT * FROM $table");
 
                             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                                 if ($row['username'] == $user_username) {
@@ -63,7 +62,7 @@
                                 }
                             }
 
-                            $result = mysqli_query($conn, 'INSERT INTO $table ($user_username, $user_pass, "[{}]", "[]")');
+                            mysqli_query($conn, 'INSERT INTO $table ($user_username, $user_pass, "[{}]", "[]")');
                         }
                     ?>
                 </p>
