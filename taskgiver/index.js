@@ -165,17 +165,17 @@ function getData(username) {
 }
 
 function getUsername() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-            return this.responseText;
+    var hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        var key = hash[0],
+            val = hash[1];
+        if (key === "username") {
+            return val;
         }
     }
-
-    xhttp.open("GET", './getuser.php', true);
-    xhttp.send();
+    return false;
 }
 
 function saveData() {

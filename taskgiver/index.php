@@ -13,7 +13,7 @@
             if (!isset($_POST["username"])) {
                 include("login.php");
             } else {
-                include("main.php");
+                include("main.php?username=" . $_POST["username"]);
             }
         ?>
 
