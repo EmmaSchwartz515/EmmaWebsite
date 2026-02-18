@@ -17,6 +17,8 @@ var USER_tasks_completed = []; // USER DATA
 
 var counter = document.getElementById("counter");
 var curr_task = document.getElementById("currtask");
+var username_holder = document.getElementById("username");
+
 
 var tasks = [];
 
@@ -165,17 +167,11 @@ function getData(username) {
 }
 
 function getUsername() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-            return this.responseText;
-        }
+    if (username_holder.textContent == "") {
+        window.setTimeout(getUsername, 1);
+    } else {
+        return username_holder.textContent;
     }
-
-    xhttp.open("GET", './getusername.php', true);
-    xhttp.send();
 }
 
 function saveData() {

@@ -1,5 +1,10 @@
 <div class="main">
     <h1>Task Giver</h1>
+    <div hidden="true" aria-hidden="true" id="username">
+        <?php
+            echo $_GET["username"];
+        ?>
+    </div>
     <h2>Current Task:</h2>
     <div id="currtask"></div>
     <button onclick="completed()">did it</button>
