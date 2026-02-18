@@ -26,6 +26,9 @@
                         $username = "emmaschw_emma";
                         $password = "Zydvy3-noswyx-tixzyk";
                         $dbname = "emmaschw_tasks";
+                        
+                        $user_username = $_POST['username'];
+                        $user_pass = $_POST['password'];
 
                         // Create connection
                         try {
@@ -42,8 +45,6 @@
                         $result = mysqli_query($conn,"SELECT * FROM $table");
 
                         if (isset($_POST['login'])) {
-                            $user_username = $_POST['username'];
-                            $user_pass = $_POST['password'];
 
                             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                                 if ($row['username'] == $user_username) {
