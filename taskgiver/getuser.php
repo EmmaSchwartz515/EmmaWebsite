@@ -1,3 +1,3 @@
 <?php
-    echo $_GET["username"];
+    echo $_SERVER["username"];
 ?>

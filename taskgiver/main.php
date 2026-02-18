@@ -6,3 +6,6 @@
     <button onclick="notCompleted()">didn't do it</button>
     <div><span id="counter">0</span> tasks completed</div>
 </div>
+
+
+<script src="./index.js" async defer></script>

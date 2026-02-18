@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php
-            if (!isset($_GET["username"])) {
+            if (!isset($_SERVER["username"])) {
                 include("login.php");
             } else {
                 include("main.php");
@@ -18,6 +18,5 @@
         ?>
 
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
-        <script src="./index.js" async defer></script>
     </body>
 </html>
