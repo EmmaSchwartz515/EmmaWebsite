@@ -26,7 +26,7 @@
                         $username = "emmaschw_emma";
                         $password = "Zydvy3-noswyx-tixzyk";
                         $dbname = "emmaschw_tasks";
-                        
+
                         $user_username = $_POST['username'];
                         $user_pass = $_POST['password'];
 
@@ -63,7 +63,7 @@
                                 }
                             }
 
-                            mysqli_query($conn, 'INSERT INTO $table ($user_username, $user_pass, "{}", "{}")');
+                            mysqli_query($conn, "INSERT INTO $table ($user_username, $user_pass, JSON_INSERT(), JSON_INSERT()");
                         }
                     ?>
                 </p>
