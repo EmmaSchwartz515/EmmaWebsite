@@ -63,7 +63,7 @@
                                 }
                             }
 
-                            mysqli_query($conn, "INSERT INTO $table ($user_username, $user_pass, JSON_INSERT(), JSON_INSERT()");
+                            mysqli_query($conn, "INSERT INTO $table ($user_username, $user_pass, JSON_QUERY('[]'), JSON_QUERY('[]')");
                         }
                     ?>
                 </p>
