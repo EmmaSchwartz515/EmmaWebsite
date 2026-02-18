@@ -17,8 +17,8 @@
                     <input type="text" name="username" placeholder="AlexSmith2032"><br>
                     <label>Password: </label>
                     <input type="text" name="password"><br>
-                    <input type="create" name="create" value="Create Account">
-                    <input type="login" name="login" value="Log In">
+                    <input type="submit" name="create" value="Create Account">
+                    <input type="submit" name="login" value="Log In">
                 </form>
                 <p>
                     <?php
