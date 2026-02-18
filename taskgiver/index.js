@@ -13,7 +13,6 @@ var USER_tasks_completed = []; // USER DATA
 
 // TODO : Confetti after each task completion
 // TODO : Leaderboard
-// TODO : Move data to online
 // TODO : Update data online
 
 var counter = document.getElementById("counter");
@@ -127,6 +126,8 @@ function notCompleted() {
 }
 
 function updateLeaderboard() {
+    saveData();
+
     if (USER_tags_points.keys().length == 0) {return}
 
     for (const tag of USER_tags_points.keys()) {
@@ -134,7 +135,7 @@ function updateLeaderboard() {
     }
 }
 
-function loadData(username) {
+function getData(username) {
     const xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
@@ -161,10 +162,46 @@ function loadData(username) {
     xhttp.send();
 }
 
-function saveData(username, field, data) {
+function getUsername() {
+    const xhttp = new XMLHttpRequest();
 
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            return this.responseText;
+        }
+    }
+
+    xhttp.open("GET", './getuser.php', true);
+    xhttp.send();
 }
 
-loadData("user");
+function saveData() {
+    // Put data into JSON
+    const arrayToSerialize = [];
+    USER_tags_points.forEach((value, key) => arrayToSerialize.push([key, value]));
+    const tags_points_json = JSON.stringify(arrayToSerialize);
+
+    const tasks_completed_json = JSON.stringify(USER_tasks_completed);
+
+    // xhhtp put data into PHP
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    }
+
+    var url = './updateuser.php?user=' + USER_username + "&tags_points=" + tags_points_json + "&tasks_completed=" + tasks_completed_json
+
+    xhttp.open("POST", url, true);
+    xhttp.send();
+
+    // PHP put data into SQL
+}
+
+username = getUsername();
+
+getData(username);
 
 populateTasks();
