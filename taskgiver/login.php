@@ -22,17 +22,17 @@
                 </form>
                 <p>
                     <?php
-                        $servername = "localhost";
-                        $username = "emmaschw_emma";
-                        $password = "Zydvy3-noswyx-tixzyk";
-                        $dbname = "emmaschw_tasks";
+                        $db_servername = "localhost";
+                        $db_username = "emmaschw_emma";
+                        $db_password = "Zydvy3-noswyx-tixzyk";
+                        $db_dbname = "emmaschw_tasks";
 
                         $user_username = $_POST['username'];
                         $user_pass = $_POST['password'];
 
                         // Create connection
                         try {
-                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
                         } catch (Exception $e) {
                             die("". $e->getMessage());
                         }
@@ -63,7 +63,10 @@
                                 }
                             }
 
-                            mysqli_query($conn, "INSERT INTO $table ($user_username, $user_pass, JSON_QUERY('[]'), JSON_QUERY('[]')");
+                            $empty_a = '[]';
+                            $empty_d = '{}';
+                            $sql = "INSERT INTO $table(username, password, tags_points, tasks_completed) VALUES('$user_username', '$user_pass', '$empty_a', '$empty_d')";
+                            mysqli_query($conn, $sql);
                         }
                     ?>
                 </p>
