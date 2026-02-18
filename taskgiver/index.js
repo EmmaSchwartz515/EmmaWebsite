@@ -205,6 +205,8 @@ function saveData() {
 
 var username = getUsername();
 
+console.log(username);
+
 getData(username);
 
 populateTasks();
