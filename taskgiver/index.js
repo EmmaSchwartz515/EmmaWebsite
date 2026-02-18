@@ -112,7 +112,7 @@ function completed() {
 
     updateLeaderboard();
 
-    //console.log(USER_tags_points, USER_tasks_completed);
+    saveData();
 
     giveTask();
 }
@@ -124,17 +124,18 @@ function notCompleted() {
 
     updateLeaderboard();
 
+    saveData();
+
     giveTask();
 }
 
 function updateLeaderboard() {
-    saveData();
 
     if (USER_tags_points.keys().length == 0) {return}
 
-    //for (const tag of USER_tags_points.keys()) {
-        //console.log(tag, USER_tags_points.get(tag))
-    //}
+    for (const tag of USER_tags_points.keys()) {
+        console.log(tag, USER_tags_points.get(tag))
+    }
 }
 
 function getData(username) {
