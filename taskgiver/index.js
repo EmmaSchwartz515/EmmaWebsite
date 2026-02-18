@@ -82,7 +82,7 @@ function getTasksFromTag(tag) {
         }
     }
 
-    return tasks.first
+    return tasks[0]
 }
 
 function giveTask() {
@@ -96,7 +96,7 @@ function giveTask() {
 
     currentTask = getTasksFromTag(favored_tag);
 
-    tasks.splice(tasks.indexOf(currentTask));
+    tasks.splice(tasks.indexOf(currentTask), 1);
 
     if (currentTask == null) {
         console.error("Error at line 97: Current Task is Null!");

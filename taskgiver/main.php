@@ -9,7 +9,7 @@
     <div id="currtask"></div>
     <button onclick="completed()">did it</button>
     <button onclick="notCompleted()">didn't do it</button>
-    <div><span id="counter">0</span> tahsks completed</div>
+    <div><span id="counter">0</span> tasks completed</div>
 </div>
 
 

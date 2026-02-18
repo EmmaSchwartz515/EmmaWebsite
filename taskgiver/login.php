@@ -3,9 +3,9 @@
     <h2>Login</h2>
     <form action="" method="post">
         <label>Username: </label>
-        <input type="text" name="username" placeholder="AlexSmith2032"><br>
+        <input type="text" name="username_i" placeholder="AlexSmith2032"><br>
         <label>Password: </label>
-        <input type="text" name="password"><br>
+        <input type="text" name="password_i"><br>
         <input type="submit" name="create" value="Create Account">
         <input type="submit" name="login" value="Log In">
     </form>
@@ -16,8 +16,8 @@
             $db_password = "Zydvy3-noswyx-tixzyk";
             $db_dbname = "emmaschw_tasks";
 
-            $user_username = $_POST['username'];
-            $user_pass = $_POST['password'];
+            $user_username = $_POST['username_i'];
+            $user_pass = $_POST['password_i'];
 
             // Create connection
             try {
