@@ -1,3 +1,3 @@
 <?php
-    echo $_SERVER["username"];
+    echo $_POST["username"];
 ?>

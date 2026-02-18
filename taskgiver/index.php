@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php
-            if (!isset($_SERVER["username"])) {
+            if (!isset($_POST["username"])) {
                 include("login.php");
             } else {
                 include("main.php");
