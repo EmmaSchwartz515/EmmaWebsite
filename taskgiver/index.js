@@ -27,11 +27,8 @@ function makeTask(text, tags) {
     task.text = text;
     task.tags = tags;
 
-    console.log("Hello, making tags:" + tags)
-
     for (const tag of tags) {
         if (!USER_tags_points.has(tag)) {
-            console.log("Hello, making tag:" + tag)
             USER_tags_points.set(tag, 0);
         }
     }
@@ -40,15 +37,12 @@ function makeTask(text, tags) {
 }
 
 function populateTasks() {
-    console.log("Populating tasks")
-
     const xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var table = JSON.parse(this.responseText);
 
-            console.log("Populating tasks2")
             for (var i = 0; i < table.length; i++) {
                 var tagsArray = table[i].tags.split(",");
 
@@ -145,7 +139,7 @@ function updateLeaderboard() {
     if (USER_tags_points.keys().length == 0) {return}
 
     for (const tag of USER_tags_points.keys()) {
-        console.log(tag, USER_tags_points.get(tag))
+        //console.log(tag, USER_tags_points.get(tag))
     }
 }
 
@@ -160,8 +154,6 @@ function getData(username) {
                 var user = table[i].username;
 
                 if (user == username) {
-                    console.log("Found user!");
-
                     USER_username = user;
 
                     USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
@@ -178,8 +170,6 @@ function getData(username) {
                     return;
                 }
             }
-
-            console.log("Could not find user.");
         }
     }
 
@@ -206,16 +196,8 @@ function saveData() {
     // xhhtp put data into PHP
     const xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-        }
-    }
-
     var url = './updateuser.php?user=' + USER_username + "&tags_points=" + tags_points_json + "&tasks_completed="
         + tasks_completed_json;
-    
-    console.log(url);
 
     xhttp.open("GET", url, true);
     xhttp.send();
@@ -229,9 +211,10 @@ function setup() {
         return;
     }
 
-    console.log(username);
-
     getData(username);
+
+    console.log("tags", USER_tags_points)
+    console.log("tasks", USER_tasks_completed);
 
     populateTasks();
 }
