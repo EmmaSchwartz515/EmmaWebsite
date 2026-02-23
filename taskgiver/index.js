@@ -113,8 +113,6 @@ function completed() {
 
     USER_tasks_completed.push(currentTask);
 
-    counter.textContent = USER_tasks_completed.length;
-
     updateLeaderboard();
 
     saveData();
@@ -135,12 +133,11 @@ function notCompleted() {
 }
 
 function updateLeaderboard() {
+    console.log("tags", USER_tags_points);
+    console.log("tasks", USER_tasks_completed);
 
-    if (USER_tags_points.keys().length == 0) {return}
 
-    for (const tag of USER_tags_points.keys()) {
-        //console.log(tag, USER_tags_points.get(tag))
-    }
+    counter.textContent = USER_tasks_completed.length;
 }
 
 function getData(username) {
@@ -164,8 +161,6 @@ function getData(username) {
                     for (task in USER_tasks_completed) {
                         tasks.splice(tasks.indexOf(task));
                     }
-
-                    counter.textContent = USER_tasks_completed.length;
 
                     return;
                 }
@@ -213,10 +208,9 @@ function setup() {
 
     getData(username);
 
-    console.log("tags", USER_tags_points)
-    console.log("tasks", USER_tasks_completed);
-
     populateTasks();
+
+    updateLeaderboard();
 }
 
 function eraseData() {
