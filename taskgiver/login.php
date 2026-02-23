@@ -38,7 +38,7 @@
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     if ($row['username'] == $user_username) {
                         if ($row['password'] == $user_pass) {
-                            $_POST['username'] = $row['username'];
+                            $_POST['username'] = $user_username;
                             echo "DID IT!";
                         } else {
                             echo "Wrong password lol";
