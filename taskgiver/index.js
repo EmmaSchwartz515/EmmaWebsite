@@ -29,6 +29,7 @@ function makeTask(text, tags) {
 
     for (const tag of tags) {
         if (!USER_tags_points.has(tag)) {
+            console.log("Hello, making tag: " + tag)
             USER_tags_points.set(tag, 0);
         }
     }
