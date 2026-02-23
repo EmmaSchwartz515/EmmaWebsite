@@ -156,7 +156,7 @@ function getData(username) {
                     USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
                     updateLeaderboard();
 
-                    USER_tasks_completed = JSON.parse(table[i].tags_points);
+                    USER_tasks_completed = JSON.parse(table[i].tasks_completed);
 
                     for (task in USER_tasks_completed) {
                         tasks.splice(tasks.indexOf(task));
