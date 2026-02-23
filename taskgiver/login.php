@@ -16,9 +16,6 @@
             $db_password = "Zydvy3-noswyx-tixzyk";
             $db_dbname = "emmaschw_tasks";
 
-            $user_username = $_POST['username_i'];
-            $user_pass = $_POST['password_i'];
-
             // Create connection
             try {
                 $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
@@ -35,6 +32,9 @@
 
             if (isset($_POST['login'])) {
 
+                $user_username = $_POST['username_i'];
+                $user_pass = $_POST['password_i'];
+
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     if ($row['username'] == $user_username) {
                         if ($row['password'] == $user_pass) {
@@ -46,6 +46,10 @@
                     }
                 }
             } else if (isset($_POST['create'])) {
+                $user_username = $_POST['username_i'];
+                $user_pass = $_POST['password_i'];
+
+
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     if ($row['username'] == $user_username) {
                         echo "Username Already Taken!";
