@@ -40,11 +40,15 @@ function makeTask(text, tags) {
 }
 
 function populateTasks() {
+    console.log("Populating tasks")
+
     const xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var table = JSON.parse(this.responseText);
+
+            console.log("Populating tasks2")
             for (var i = 0; i < table.length; i++) {
                 var tagsArray = table[i].tags.split(",");
 
