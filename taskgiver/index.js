@@ -27,9 +27,11 @@ function makeTask(text, tags) {
     task.text = text;
     task.tags = tags;
 
+    console.log("Hello, making tags:" + tags)
+
     for (const tag of tags) {
         if (!USER_tags_points.has(tag)) {
-            console.log("Hello, making tag: " + tag)
+            console.log("Hello, making tag:" + tag)
             USER_tags_points.set(tag, 0);
         }
     }
@@ -47,9 +49,9 @@ function populateTasks() {
                 var tagsArray = table[i].tags.split(",");
 
                 makeTask(table[i].text, tagsArray);
-                
-                giveTask();
             }
+
+            giveTask();
         }
     }
 
