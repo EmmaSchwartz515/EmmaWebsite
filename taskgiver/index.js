@@ -229,4 +229,15 @@ function setup() {
     populateTasks();
 }
 
+function eraseData() {
+    USER_tags_points = new Map(); // USER DATA
+    USER_tasks_completed = []; // USER DATA
+
+    saveData();
+
+    updateLeaderboard();
+
+    giveTask();
+}
+
 setup();
