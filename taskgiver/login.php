@@ -26,7 +26,7 @@
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             if ($row['username'] == $user_username) {
                 if ($row['password'] == $user_pass) {
-                    header('Location:main.php'); 
+                    header('Location:main.php?username=' . $user_username); 
                     echo "DID IT!";
                     exit;
                 } else {
