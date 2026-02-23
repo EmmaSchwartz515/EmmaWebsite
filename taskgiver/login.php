@@ -1,3 +1,57 @@
+<?php
+    $db_servername = "localhost";
+    $db_username = "emmaschw_emma";
+    $db_password = "Zydvy3-noswyx-tixzyk";
+    $db_dbname = "emmaschw_tasks";
+
+    // Create connection
+    try {
+        $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
+    } catch (Exception $e) {
+        die("". $e->getMessage());
+    }
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    }
+
+    $table = "user_data";
+    $result = mysqli_query($conn,"SELECT * FROM $table");
+
+    if (isset($_POST['login'])) {
+
+        $user_username = $_POST['username_i'];
+        $user_pass = $_POST['password_i'];
+
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            if ($row['username'] == $user_username) {
+                if ($row['password'] == $user_pass) {
+                    header('Location:main.php'); 
+                    echo "DID IT!";
+                    exit;
+                } else {
+                    echo "Wrong password lol";
+                }
+            }
+        }
+    } else if (isset($_POST['create'])) {
+        $user_username = $_POST['username_i'];
+        $user_pass = $_POST['password_i'];
+
+
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            if ($row['username'] == $user_username) {
+                echo "Username Already Taken!";
+                return;
+            }
+        }
+
+        $empty_a = '[]';
+        $empty_d = '{}';
+        $sql = "INSERT INTO $table(username, password, tags_points, tasks_completed) VALUES('$user_username', '$user_pass', '$empty_a', '$empty_d')";
+        mysqli_query($conn, $sql);
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,61 +73,6 @@
                 <input type="submit" name="create" value="Create Account">
                 <input type="submit" name="login" value="Log In">
             </form>
-            <p>
-                <?php
-                    $db_servername = "localhost";
-                    $db_username = "emmaschw_emma";
-                    $db_password = "Zydvy3-noswyx-tixzyk";
-                    $db_dbname = "emmaschw_tasks";
-
-                    // Create connection
-                    try {
-                        $conn = new mysqli($db_servername, $db_username, $db_password, $db_dbname);
-                    } catch (Exception $e) {
-                        die("". $e->getMessage());
-                    }
-                    // Check connection
-                    if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                    }
-
-                    $table = "user_data";
-                    $result = mysqli_query($conn,"SELECT * FROM $table");
-
-                    if (isset($_POST['login'])) {
-
-                        $user_username = $_POST['username_i'];
-                        $user_pass = $_POST['password_i'];
-
-                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            if ($row['username'] == $user_username) {
-                                if ($row['password'] == $user_pass) {
-                                    header('Location:main.php'); 
-                                    echo "DID IT!";
-                                } else {
-                                    echo "Wrong password lol";
-                                }
-                            }
-                        }
-                    } else if (isset($_POST['create'])) {
-                        $user_username = $_POST['username_i'];
-                        $user_pass = $_POST['password_i'];
-
-
-                        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            if ($row['username'] == $user_username) {
-                                echo "Username Already Taken!";
-                                return;
-                            }
-                        }
-
-                        $empty_a = '[]';
-                        $empty_d = '{}';
-                        $sql = "INSERT INTO $table(username, password, tags_points, tasks_completed) VALUES('$user_username', '$user_pass', '$empty_a', '$empty_d')";
-                        mysqli_query($conn, $sql);
-                    }
-                ?>
-            </p>
         </div>
 
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
