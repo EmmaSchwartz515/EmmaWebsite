@@ -4,7 +4,7 @@
     --b3: #a99271;
     --b4: #c5b99e;
     --text: #334828;
-    --bg1: #ddcfb2;
+    --bg1: #dcc2ac;
     --bg2: #fffcee;
     --bg3: #cbae9c;
     background-color: #f2ede3;
@@ -150,6 +150,7 @@ input {
 }
 
 .rsscard {
+    width: 100%;
     text-align: left;
     background: var(--bg1);
     border: none;
