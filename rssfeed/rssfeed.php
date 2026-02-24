@@ -11,14 +11,43 @@
     <body>
         <div class="main">
             <?php
+                $maxItems = 3;
+
+                if (!isset($_POST["showless"])) {
+                    if (isset($_POST["showmore"])) {
+                        $maxItems = -1;
+                    }
+                } else {
+                    $_POST["showmore"] = null;
+                }
                 $feedURL = "https://www.trumba.com/calendars/csuci-academic-calendar.rss";
                 $feed = simplexml_load_file($feedURL);
 
                 echo '<h1>' . $feed->channel->title . '</h1>';
 
+                $i = 0;
                 foreach ($feed->channel->item as $item) {
+                    if ($i >= $maxItems && $maxItems >= 0) {
+                        break;
+                    }
+
+                    $i++;
                     echo '<a href="' . $item->link . '"><button class="rsscard"><h2>' . $item->title . '</h2>'
                         . '<h3>' . $item->description . '</h3></button></a><br/>';
+                }
+
+                if ($maxItems > 0) {
+                    echo '
+                        <form>
+                            <input type="submit" name="showmore" value="Show more">
+                        </form>
+                    ';
+                } else {
+                    echo '
+                        <form>
+                            <input type="submit" name="showless" value="Show less">
+                        </form>
+                    ';
                 }
             ?>
         </div>
