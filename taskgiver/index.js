@@ -57,8 +57,9 @@ function populateTasks() {
         var task = new Task();
         var gotTitle = false;
         for (var entry in entries) {
+            console.log(entry);
             if (!gotTitle) {
-                task.title = entry;
+                task.entry = entry;
             } else {
                 task.tags.push(entry);
             }
