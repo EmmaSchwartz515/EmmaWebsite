@@ -81,7 +81,7 @@
                 <label>Username: </label>
                 <input type="text" name="username_i" placeholder="AlexSmith2032"><br>
                 <label>Password: </label>
-                <input id="pass_field" type="password" minlength="1" name="password_i"><button onclick="showPassword()" type="button">Showw password<i id="pass_show_icon" class="fa-solid fa-eye"></i></button><br>
+                <span><input id="pass_field" type="password" minlength="1" name="password_i"><button onclick="showPassword()" type="button" aria-label="Show Password" label="Show Password"><i id="pass_show_icon" class="fa-solid fa-eye"></i></button></span><br>
                 <input type="submit" name="create" value="Create Account">
                 <input type="submit" name="login" value="Log In">
             </form>
