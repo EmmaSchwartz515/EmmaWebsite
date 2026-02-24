@@ -111,6 +111,8 @@ function completed() {
         USER_tags_points.set(tag, USER_tags_points.get(tag) + 1);
     }
 
+    console.log(USER_tasks_completed);
+
     USER_tasks_completed.push(currentTask);
 
     updateLeaderboard();
@@ -153,14 +155,23 @@ function getData(username) {
                 if (user == username) {
                     USER_username = user;
 
-                    USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
-                    updateLeaderboard();
+                    if (table[i].tags_points == "") {
+                        USER_tags_points = new Map();
+                    } else {
+                        USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
+                    }
 
-                    USER_tasks_completed = JSON.parse(table[i].tasks_completed);
+                    if (table[i].tasks_completed == "") {
+                        USER_tasks_completed = [];
+                    } else {
+                        USER_tasks_completed = JSON.parse(table[i].tasks_completed);
+                    }
 
-                    for (task in USER_tasks_completed) {
+                    for (var task of USER_tasks_completed) {
                         tasks.splice(tasks.indexOf(task));
                     }
+
+                    updateLeaderboard();
 
                     return;
                 }
