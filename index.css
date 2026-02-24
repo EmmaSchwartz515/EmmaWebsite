@@ -153,4 +153,10 @@ input {
     justify-content: left;
     justify-items: left;
     text-align: left;
+    background-color: #715641;
+}
+
+.rsscard :hover {
+    background-color: #a99271;
+    cursor: pointer;
 }
