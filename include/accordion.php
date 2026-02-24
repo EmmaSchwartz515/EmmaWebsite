@@ -51,6 +51,7 @@
         $_GET["content"] = "
             <div class=\"sect\">
                 <a href=\"../taskgiver/login.php\">Task Giver</a>
+                <a href=\"../rssfeed/rssfeed.php\">RSS Feed</a>
             </div>
         ";
         include("accordion-item.php");
