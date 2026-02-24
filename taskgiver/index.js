@@ -164,6 +164,7 @@ function getData(username) {
                     if (table[i].tasks_completed == "") {
                         USER_tasks_completed = [];
                     } else {
+                        console.log("Tasks completed NOT \"\"")
                         USER_tasks_completed = JSON.parse(table[i].tasks_completed);
                     }
 
