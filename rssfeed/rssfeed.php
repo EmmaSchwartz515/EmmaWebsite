@@ -56,8 +56,6 @@
 
         <!--<script src="./rssfeed.js" async defer></script>-->
 
-        <script src="../removeformresubmission.js"></script>
-
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
     </body>
 </html>
