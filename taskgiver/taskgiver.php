@@ -27,7 +27,7 @@
         </div>
 
 
-        <script src="./index.js" async defer></script>
+        <script src="./taskgiver.js" async defer></script>
 
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
     </body>

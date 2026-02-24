@@ -26,7 +26,7 @@
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
             if ($row['username'] == $user_username) {
                 if ($row['password'] == $user_pass) {
-                    header('Location:main.php?username=' . $user_username); 
+                    header('Location:taskgiver.php?username=' . $user_username); 
                     echo "DID IT!";
                     exit;
                 } else {
@@ -69,7 +69,7 @@
                 <label>Username: </label>
                 <input type="text" name="username_i" placeholder="AlexSmith2032"><br>
                 <label>Password: </label>
-                <input type="password" minlength="1" name="password_i"><br>
+                <input id="pass_field" type="password" minlength="1" name="password_i"><a onclick="showPassword()"><i id="pass_show_icon" class="fa-solid fa-eye"></i></a><br>
                 <input type="submit" name="create" value="Create Account">
                 <input type="submit" name="login" value="Log In">
             </form>
