@@ -75,7 +75,16 @@ function getBestTag(lowestOrHighest) { // -1 for lowest, 1 for highest
     return curr_tag;
 }
 
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function getTasksFromTag(tag) {
+    shuffle(tasks);
+
     for (const task of tasks) {
         if (task.tags.includes(tag)) {
             return task;
@@ -244,7 +253,7 @@ function eraseData() {
 
     updateLeaderboard();
 
-    giveTask();
+    populateTasks();
 }
 
 setup();
