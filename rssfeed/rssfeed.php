@@ -19,7 +19,8 @@
                 echo '<h1>' . $feed->channel->title . '</h1>';
 
                 foreach ($feed->channel->item as $item) {
-                    echo '<h2>' . $item->title . '</h2>';
+                    echo '<a href="' . $item->link . '"><h2>' . $item->title . '</h2><br/>'
+                        . '<h3>' . $item->description . '</h3></a>';
                 }
             ?>
         </div>
