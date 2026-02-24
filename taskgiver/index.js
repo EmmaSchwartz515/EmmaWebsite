@@ -1,5 +1,3 @@
-import tasks_csv from './tasks.csv';
-
 class Task {
     text = "Task Text";
     tags = [];
@@ -38,11 +36,21 @@ function makeTask(text, tags) {
 }
 
 function getCSV(filePath) {
-    console.log(tasks_csv);
+    var result = null;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", filePath, false);
+    xmlhttp.send();
+    if (xmlhttp.status==200) {
+        result = xmlhttp.responseText;
+    }
+
+    return result;
 }
 
 function populateTasks() {
     tasksCSV = getCSV("./tasks.csv");
+
+    console.log(tasksCSV);
 
     var lines = tasksCSV.split("\n");
     for (var line in lines) {
