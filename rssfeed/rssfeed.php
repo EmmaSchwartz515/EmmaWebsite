@@ -13,9 +13,6 @@
             <?php
                 $maxItems = 3;
 
-                echo $_POST['showless'];
-                echo $_POST['showmore'];
-
                 if (!isset($_POST["showless"])) {
                     echo "no Showless";
                     if (isset($_POST["showmore"])) {
@@ -44,13 +41,13 @@
 
                 if ($maxItems > 0) {
                     echo '
-                        <form>
+                        <form action="" method="post">
                             <input type="submit" name="showmore" value="Show more">
                         </form>
                     ';
                 } else {
                     echo '
-                        <form>
+                        <form action="" method="post">
                             <input type="submit" name="showless" value="Show less">
                         </form>
                     ';
