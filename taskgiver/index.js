@@ -53,8 +53,10 @@ function populateTasks() {
     console.log(tasksCSV);
 
     var lines = tasksCSV.split("\n");
+    console.log(lines)
     for (var line in lines) {
         var entries = line.split(",");
+        console.log(entries)
 
         var task = new Task();
         var gotTitle = false;
