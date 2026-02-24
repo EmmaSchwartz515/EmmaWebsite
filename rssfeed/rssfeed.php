@@ -14,7 +14,9 @@
                 $maxItems = 3;
 
                 if (!isset($_POST["showless"])) {
+                    echo "no Showless";
                     if (isset($_POST["showmore"])) {
+                        echo "Showmore";
                         $maxItems = -1;
                     }
                 } else {
