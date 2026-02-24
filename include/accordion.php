@@ -52,6 +52,7 @@
             <div class=\"sect\">
                 <a href=\"../taskgiver/login.php\">Task Giver</a>
                 <a href=\"../rssfeed/container.php\">RSS Feed</a>
+                <a href=\"../rssfeed/holiday.php\">Holiday Calendar</a>
             </div>
         ";
         include("accordion-item.php");
