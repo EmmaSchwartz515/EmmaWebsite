@@ -61,7 +61,7 @@ function populateTasks() {
 
         var task = new Task();
         var gotTitle = false;
-        for (var entry in entries) {
+        for (var entry of entries) {
             console.log(entry);
             if (!gotTitle) {
                 task.entry = entry;
