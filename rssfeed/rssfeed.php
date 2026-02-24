@@ -10,8 +10,6 @@
     </head>
     <body>
         <div class="main">
-            <h1>RSS Feed from CI Events</h1>
-
             <?php
                 $feedURL = "https://www.trumba.com/calendars/csuci-academic-calendar.rss";
                 $feed = simplexml_load_file($feedURL);
@@ -19,8 +17,8 @@
                 echo '<h1>' . $feed->channel->title . '</h1>';
 
                 foreach ($feed->channel->item as $item) {
-                    echo '<button class="card" href="' . $item->link . '"><h2>' . $item->title . '</h2>'
-                        . '<h3>' . $item->description . '</h3></button><br/>';
+                    echo '<a href="' . $item->link . '"><button class="card"><h2>' . $item->title . '</h2>'
+                        . '<h3>' . $item->description . '</h3></button></a><br/>';
                 }
             ?>
         </div>
