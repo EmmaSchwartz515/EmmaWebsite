@@ -57,7 +57,6 @@ function populateTasks() {
         var task = new Task();
         var gotTitle = false;
         for (var entry of entries) {
-            console.log(entry);
             if (!gotTitle) {
                 task.text = entry;
                 gotTitle = true;
@@ -164,10 +163,6 @@ function notCompleted() {
 }
 
 function updateLeaderboard() {
-    console.log("tags", USER_tags_points);
-    console.log("tasks", USER_tasks_completed);
-
-
     counter.textContent = USER_tasks_completed.length;
 }
 

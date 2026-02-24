@@ -69,7 +69,7 @@
                 <label>Username: </label>
                 <input type="text" name="username_i" placeholder="AlexSmith2032"><br>
                 <label>Password: </label>
-                <input type="text" name="password_i"><br>
+                <input type="password" minlength="1" name="password_i"><br>
                 <input type="submit" name="create" value="Create Account">
                 <input type="submit" name="login" value="Log In">
             </form>
