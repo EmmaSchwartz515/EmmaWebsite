@@ -147,3 +147,9 @@ input {
     height: 10%;
     padding: 0;
 }
+
+.rsscard {
+    width: 100%;
+    justify-content: left;
+    justify-items: left;
+}

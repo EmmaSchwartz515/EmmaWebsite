@@ -17,7 +17,7 @@
                 echo '<h1>' . $feed->channel->title . '</h1>';
 
                 foreach ($feed->channel->item as $item) {
-                    echo '<a href="' . $item->link . '"><button class="card"><h2>' . $item->title . '</h2>'
+                    echo '<a href="' . $item->link . '"><button class="rsscard"><h2>' . $item->title . '</h2>'
                         . '<h3>' . $item->description . '</h3></button></a><br/>';
                 }
             ?>
