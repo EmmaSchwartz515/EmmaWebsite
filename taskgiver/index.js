@@ -1,7 +1,6 @@
 class Task {
     text = "Task Text";
     tags = [];
-    id = "";
 }
 
 var USER_username = ""; // USER DATA
@@ -83,7 +82,14 @@ function getTasksFromTag(tag) {
         }
     }
 
-    return tasks[0]
+    var task = tasks[0];
+
+    if (task == null) {
+        task = new Task;
+        task.text = "No more tasks left to give!"
+    }
+
+    return tasks[0];
 }
 
 function giveTask() {
