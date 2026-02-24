@@ -161,6 +161,9 @@ function getData(username) {
                         USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
                     }
 
+
+                    console.log("tasks completed", table[i].tasks_completed);
+
                     if (table[i].tasks_completed == "") {
                         USER_tasks_completed = [];
                     } else {
@@ -193,6 +196,8 @@ function getUsername() {
 }
 
 function saveData() {
+    console.log("Saving Data");
+
     // Put data into JSON
     const arrayToSerialize = [];
     USER_tags_points.forEach((value, key) => arrayToSerialize.push([key, value]));
