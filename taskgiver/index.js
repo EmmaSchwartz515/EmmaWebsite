@@ -50,21 +50,17 @@ function getCSV(filePath) {
 function populateTasks() {
     tasksCSV = getCSV("./tasks.csv");
 
-    console.log(tasksCSV);
-
     var lines = tasksCSV.split("\n");
-    console.log(lines)
     for (var line of lines) {
-        console.log(line)
         var entries = line.split(",");
-        console.log(entries)
 
         var task = new Task();
         var gotTitle = false;
         for (var entry of entries) {
             console.log(entry);
             if (!gotTitle) {
-                task.entry = entry;
+                task.text = entry;
+                gotTitle = true;
             } else {
                 task.tags.push(entry);
             }
