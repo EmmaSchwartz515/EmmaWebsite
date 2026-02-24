@@ -11,7 +11,7 @@
     <body>
         <div class="main">
             <?php
-                $maxItems = 3;
+                $maxItems = 5;
 
                 if (!isset($_POST["showless"])) {
                     if (isset($_POST["showmore"])) {
