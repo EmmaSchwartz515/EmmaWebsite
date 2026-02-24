@@ -6,6 +6,7 @@
     --text: #334828;
     --bg1: #ddcfb2;
     --bg2: #fffcee;
+    --bg2: #cbae9c;
     background-color: #f2ede3;
     overflow: hidden;
     color: var(--text);
@@ -149,14 +150,16 @@ input {
 }
 
 .rsscard {
-    width: 100%;
-    justify-content: left;
-    justify-items: left;
     text-align: left;
-    background-color: #715641;
+    background: var(--bg1);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
 }
 
 .rsscard:hover {
-    background-color: #a99271;
+    background-color: var(--bg3);
     cursor: pointer;
 }
