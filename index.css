@@ -156,7 +156,7 @@ input {
     background-color: #715641;
 }
 
-.rsscard :hover {
+.rsscard:hover {
     background-color: #a99271;
     cursor: pointer;
 }
