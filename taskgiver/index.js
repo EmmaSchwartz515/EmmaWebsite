@@ -35,25 +35,39 @@ function makeTask(text, tags) {
     tasks.push(task);
 }
 
-function populateTasks() {
-    const xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var table = JSON.parse(this.responseText);
-
-            for (var i = 0; i < table.length; i++) {
-                var tagsArray = table[i].tags.split(",");
-
-                makeTask(table[i].text, tagsArray);
-            }
-
-            giveTask();
-        }
+function getCSV(filePath) {
+    var result = null;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", filePath, false);
+    xmlhttp.send();
+    if (xmlhttp.status==200) {
+        result = xmlhttp.responseText;
     }
 
-    xhttp.open("GET", './query.php?table=tasks', true);
-    xhttp.send();
+    return result;
+}
+
+function populateTasks() {
+    tasksCSV = getCSV("./tasks.csv");
+
+    var lines = tasksCSV.split("\n");
+    for (var line in lines) {
+        var entries = line.split(",");
+
+        var task = new Task();
+        var gotTitle = false;
+        for (var entry in entries) {
+            if (!gotTitle) {
+                task.title = entry;
+            } else {
+                task.tags.push(entry);
+            }
+        }
+
+        tasks.push(task);
+    }
+
+    console.log(tasks);
 }
 
 var favor_out_of_comfort_zone = true;
@@ -126,8 +140,6 @@ function completed() {
         USER_tags_points.set(tag, USER_tags_points.get(tag) + 1);
     }
 
-    console.log(USER_tasks_completed);
-
     USER_tasks_completed.push(currentTask);
 
     updateLeaderboard();
@@ -175,14 +187,10 @@ function getData(username) {
                     } else {
                         USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
                     }
-
-
-                    console.log("tasks completed", table[i].tasks_completed);
-
+                    
                     if (table[i].tasks_completed == "{}") {
                         USER_tasks_completed = [];
                     } else {
-                        console.log("Tasks completed NOT \"\"")
                         USER_tasks_completed = JSON.parse(table[i].tasks_completed);
                     }
 
@@ -211,8 +219,6 @@ function getUsername() {
 }
 
 function saveData() {
-    console.log("Saving Data");
-
     // Put data into JSON
     const arrayToSerialize = [];
     USER_tags_points.forEach((value, key) => arrayToSerialize.push([key, value]));
