@@ -18,47 +18,49 @@
     $table = "user_data";
     $result = mysqli_query($conn,"SELECT * FROM $table");
 
-    if (isset($_POST['login'])) {
+    if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+        if (isset($_POST['login'])) {
 
-        $user_username = $_POST['username_i'];
-        $user_pass = $_POST['password_i'];
+            $user_username = $_POST['username_i'];
+            $user_pass = $_POST['password_i'];
 
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            if ($row['username'] == $user_username) {
-                if ($row['password'] == $user_pass) {
-                    header('Location:taskgiver.php?username=' . $user_username); 
-                    echo "DID IT!";
-                    exit;
-                } else {
-                    echo "Wrong password lol";
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                if ($row['username'] == $user_username) {
+                    if ($row['password'] == $user_pass) {
+                        header('Location:taskgiver.php?username=' . $user_username); 
+                        echo "DID IT!";
+                        exit;
+                    } else {
+                        echo "Wrong password lol";
+                    }
                 }
             }
-        }
-    } else if (isset($_POST['create'])) {
-        $user_username = $_POST['username_i'];
-        $user_pass = $_POST['password_i'];
+        } else if (isset($_POST['create'])) {
+            $user_username = $_POST['username_i'];
+            $user_pass = $_POST['password_i'];
 
 
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            if ($row['username'] == $user_username) {
-                echo "Username Already Taken!";
-                return;
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                if ($row['username'] == $user_username) {
+                    echo "Username Already Taken!";
+                    return;
+                }
             }
-        }
 
-        $empty_a = '[]';
-        $empty_d = '{}';
-        $sql = "INSERT INTO $table(username, password, tags_points, tasks_completed) VALUES('$user_username', '$user_pass', '$empty_a', '$empty_d')";
-        mysqli_query($conn, $sql);
+            $empty_a = '[]';
+            $empty_d = '{}';
+            $sql = "INSERT INTO $table(username, password, tags_points, tasks_completed) VALUES('$user_username', '$user_pass', '$empty_a', '$empty_d')";
+            mysqli_query($conn, $sql);
 
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            if ($row['username'] == $user_username) {
-                if ($row['password'] == $user_pass) {
-                    header('Location:taskgiver.php?username=' . $user_username); 
-                    echo "DID IT!";
-                    exit;
-                } else {
-                    echo "Wrong password lol";
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                if ($row['username'] == $user_username) {
+                    if ($row['password'] == $user_pass) {
+                        header('Location:taskgiver.php?username=' . $user_username); 
+                        echo "DID IT!";
+                        exit;
+                    } else {
+                        echo "Wrong password lol";
+                    }
                 }
             }
         }
