@@ -13,16 +13,14 @@
             <?php
                 $maxItems = 5;
 
-                if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-                    if (!isset($_POST["showless"])) {
-                        if (isset($_POST["showmore"])) {
-                            $maxItems = -1;
-                        }
+                if (!isset($_POST["showless"])) {
+                    if (isset($_POST["showmore"])) {
+                        $maxItems = -1;
                     }
-
-                    $_POST["showless"] = null;
-                    $_POST["showmore"] = null;
                 }
+
+                $_POST["showless"] = null;
+                $_POST["showmore"] = null;
 
                 $feedURL = "https://www.trumba.com/calendars/csuci-academic-calendar.rss";
                 $feed = simplexml_load_file($feedURL);
