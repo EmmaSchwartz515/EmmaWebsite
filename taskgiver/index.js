@@ -69,7 +69,7 @@ function populateTasks() {
         tasks.push(task);
     }
 
-    console.log(tasks);
+    giveTask();
 }
 
 var favor_out_of_comfort_zone = true;
