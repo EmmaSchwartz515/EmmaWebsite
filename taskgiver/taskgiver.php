@@ -23,7 +23,7 @@
             <button onclick="eraseData()">Erase Data</button>
             <div><span id="counter">0</span> tasks completed</div>
 
-            <button onclick="window.location.href='https://emmaschwartz.cikeys.com/taskgiver/login.php'">Log out</button>
+            <a href="https://emmaschwartz.cikeys.com/taskgiver/login.php"><button>Log out</button></a>
         </div>
 
 
