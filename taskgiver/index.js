@@ -155,7 +155,7 @@ function getData(username) {
                 if (user == username) {
                     USER_username = user;
 
-                    if (table[i].tags_points == "") {
+                    if (table[i].tags_points == "{}" || table[i.tags_points == "[]"]) {
                         USER_tags_points = new Map();
                     } else {
                         USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
@@ -164,7 +164,7 @@ function getData(username) {
 
                     console.log("tasks completed", table[i].tasks_completed);
 
-                    if (table[i].tasks_completed == "") {
+                    if (table[i].tasks_completed == "{}") {
                         USER_tasks_completed = [];
                     } else {
                         console.log("Tasks completed NOT \"\"")
