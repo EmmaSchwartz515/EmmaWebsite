@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../index.css">
     </head>
     <body>
-        <div class="main">
+        <main class="main">
             <?php
                 $rssUrl = "https://www.trumba.com/calendars/csuci-academic-calendar.rss";
 
@@ -42,7 +42,7 @@
                     ';
                 }
             ?>
-        </div>
+        </main>
 
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
     </body>

@@ -12,13 +12,13 @@
         <?php
             //include("include/header.php");
         ?>
-        <div class="main">
+        <main class="main">
             <h1>Emma Schwartz</h1>
             <?php
                 include("include/accordion.php");
                 //include("include/contact.php");
             ?>
-        </div>
+        </main>
 
         <img class="decorative-image-bottom-right" src="images/plant-image.gif" alt="">
         

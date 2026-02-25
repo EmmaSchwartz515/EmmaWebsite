@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../index.css">
     </head>
     <body>
-        <div class="main">
+        <main class="main">
             <h1>Task Giver</h1>
             <div hidden="true" aria-hidden="true" id="username">
                 <?php
@@ -24,7 +24,7 @@
             <div><span id="counter">0</span> tasks completed</div>
 
             <a href="https://emmaschwartz.cikeys.com/taskgiver/login.php"><button>Log out</button></a>
-        </div>
+        </main>
 
 
         <script src="./taskgiver.js" async defer></script>
