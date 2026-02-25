@@ -57,7 +57,7 @@ h1 {
     max-height: 0;
     overflow: hidden;
     display: none;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 1s ease-out;
 }
 
 .sect img {
