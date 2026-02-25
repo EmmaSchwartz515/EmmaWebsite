@@ -27,7 +27,6 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(var(--brown4) .1em, transparent .1em), linear-gradient(90deg, var(--brown4) .1em, transparent .1em);
     background-size: 3em 3em;
 }
 
@@ -36,16 +35,15 @@ h1 {
 }
 
 .main {
-    height: 40%;
+    height: 70%;
     width: 90%;
     border-radius: 20px;
     align-self: center;
     align-items: center;
     justify-content: center;
     animation-name: mainIn;
-    animation-duration: 1.5s;
-    padding: 2.5%;
-    padding-bottom: 5%;
+    animation-duration: 0.5s;
+    padding: 50;
     overflow:scroll;
     background-color: var(--brown5);
 }
