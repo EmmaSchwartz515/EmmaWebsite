@@ -51,8 +51,8 @@
         $_GET["content"] = "
             <div class=\"sect\">
                 <a href=\"../taskgiver/login.php\">Task Giver</a>
-                <a href=\"../rssfeed/container.php\">RSS Feed</a>
-                <a href=\"../rssfeed/holidays.php\">Holiday Calendar</a>
+                <a href=\"../rssfeed/calendar.php\">General CI Calendar</a>
+                <a href=\"../rssfeed/holidays.php\">CI Holiday Calendar</a>
             </div>
         ";
         include("accordion-item.php");
