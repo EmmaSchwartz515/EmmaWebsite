@@ -136,7 +136,7 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: #a99271;
+    background-color: var(--bg1);
 }
 
 form {
@@ -166,5 +166,5 @@ input {
 }
 
 .footertxt {
-    color: var(--b2);
+    color: var(--bg1);
 }
