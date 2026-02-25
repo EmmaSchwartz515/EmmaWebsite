@@ -1,17 +1,22 @@
 :root {
-    --brown1: #582f0e;
-    --brown2: #7f4f24;
-    --brown3: #936639;
-    --brown4: #a68a64;
-    --brown5: #b6ad90;
-    --green1: #333d29;
-    --green2: #414833;
-    --green3: #656d4a;
-    --green4: #a4ac86;
-    --green5: #c2c5aa;
-    background-color: var(--green5);
+    --brown1: #bc6c25;
+    --brown2: #daa86f;
+    --brown3: #ddbea9;
+    --green1: #283618;
+    --green2: #606c38;
+    --white: #fefae0;
+
+    --bg: var(--green1);
+    --text: var(--white);
+    --mainbg: var(--brown3);
+    --h1: var(--white);
+    --accordion: var(--brown2);
+    --accordion-button: var(--brown1);
+    --footer: var(--brown2);
+
+    background-color: var(--bg);
     overflow: hidden;
-    color: var(--green1);
+    color: var(--text);
 }
 
 body {
@@ -31,7 +36,7 @@ body {
 }
 
 h1 {
-    color: var(--green2);
+    color: var(--h1);
 }
 
 .main {
@@ -45,7 +50,7 @@ h1 {
     animation-duration: 0.5s;
     padding: 50;
     overflow:scroll;
-    background-color: var(--brown5);
+    background-color: var(--mainbg);
 }
 
 @keyframes mainIn {
@@ -54,7 +59,7 @@ h1 {
 }
 
 .acc-item {
-    background-color: var(--brown4);
+    background-color: var(--accordion);
 
     padding: 5px;
 
@@ -80,7 +85,7 @@ h1 {
 .sect-dpdown-btn {
     width: 100%;
     text-align: left;
-    background: var(--brown3);
+    background: var(--accordion-button);
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -141,7 +146,7 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: var(--brown3);
+    background-color: var(--footer);
 }
 
 form {
@@ -157,7 +162,7 @@ input {
 .rsscard {
     width: 100%;
     text-align: left;
-    background: var(--brown3);
+    background: var(--accordion-button);
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -166,6 +171,6 @@ input {
 }
 
 .rsscard:hover {
-    background-color: var(--brown4);
+    background-color: var(--accordion);
     cursor: pointer;
 }
