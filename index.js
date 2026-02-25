@@ -23,4 +23,9 @@ function toggleSection(btn) {
     btn.classList.toggle("open-btn");
     plusminus.classList.toggle("fa-plus");
     plusminus.classList.toggle("fa-minus");
+    if (sect.style.maxHeight) {
+        sect.style.maxHeight = null;
+    } else {
+        sect.style.maxHeight = sect.scrollHeight + "px";
+    }
 }
