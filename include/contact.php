@@ -1,13 +1,13 @@
 <div class="sect">
     <form action="" method="post">
-        <label>First Name: </label>
-        <input type="text" name="first_name" placeholder="Alex"><br>
-        <label>Last Name: </label>
-        <input type="text" name="last_name" placeholder="Smith"><br>
-        <label>Email: </label>
-        <input type="text" name="email" placeholder="alexsmith@example.com"><br>
-        <label>Message: </label>
-        <br><textarea rows="5" name="message" cols="30"></textarea><br>
+        <label for="first_name">First Name: </label>
+        <input type="text" name="first_name" id="first_name" placeholder="Alex"><br>
+        <label for="last_name">Last Name: </label>
+        <input type="text" name="last_name" id="last_name" placeholder="Smith"><br>
+        <label for="message">Email: </label>
+        <input type="text" name="email" id="email" placeholder="alexsmith@example.com"><br>
+        <label for="message">Message: </label>
+        <br><textarea rows="5" name="message" id="message" cols="30"></textarea><br>
         <input type="submit" name="submit" value="Submit">
     </form>
     <p>
