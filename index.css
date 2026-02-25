@@ -1,16 +1,17 @@
 :root {
-    --b1: #4c5537;
-    --b2: #ffffff;
-    --b3: #a99271;
-    --b4: #c5b99e;
-    --text: #334828;
-    --bg1: #dcc2ac;
-    --bg2: #fffcee;
-    --bg3: #cbae9c;
-    --bg4: #f1ddcd;
-    background-color: #f2ede3;
+    --brown1: #582f0e;
+    --brown2: #7f4f24;
+    --brown3: #936639;
+    --brown4: #a68a64;
+    --brown5: #b6ad90;
+    --green1: #333d29;
+    --green2: #414833;
+    --green3: #656d4a;
+    --green4: #a4ac86;
+    --green5: #c2c5aa;
+    background-color: var(--green5);
     overflow: hidden;
-    color: var(--text);
+    color: var(--green1);
 }
 
 body {
@@ -26,12 +27,12 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(var(--b4) .1em, transparent .1em), linear-gradient(90deg, var(--b4) .1em, transparent .1em);
+    background-image: linear-gradient(var(--brown4) .1em, transparent .1em), linear-gradient(90deg, var(--brown4) .1em, transparent .1em);
     background-size: 3em 3em;
 }
 
 h1 {
-    color: var(--b1);
+    color: var(--green2);
 }
 
 .main {
@@ -46,7 +47,7 @@ h1 {
     padding: 2.5%;
     padding-bottom: 5%;
     overflow:scroll;
-    background-color: var(--bg2);
+    background-color: var(--brown5);
 }
 
 @keyframes mainIn {
@@ -55,7 +56,7 @@ h1 {
 }
 
 .acc-item {
-    background-color: var(--bg4);
+    background-color: var(--brown4);
 
     padding: 5px;
 
@@ -85,7 +86,7 @@ h1 {
 .sect-dpdown-btn {
     width: 100%;
     text-align: left;
-    background: var(--bg1);
+    background: var(--brown3);
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -146,7 +147,7 @@ footer {
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: var(--bg1);
+    background-color: var(--brown3);
 }
 
 form {
@@ -162,7 +163,7 @@ input {
 .rsscard {
     width: 100%;
     text-align: left;
-    background: var(--bg1);
+    background: var(--brown3);
     border: none;
     border-radius: 5px;
     padding: 10px;
@@ -171,6 +172,6 @@ input {
 }
 
 .rsscard:hover {
-    background-color: var(--bg3);
+    background-color: var(--brown4);
     cursor: pointer;
 }
