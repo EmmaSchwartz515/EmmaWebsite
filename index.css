@@ -164,3 +164,7 @@ input {
     background-color: var(--bg3);
     cursor: pointer;
 }
+
+.footertxt {
+    color: var(--b2);
+}
