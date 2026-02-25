@@ -67,13 +67,7 @@ h1 {
 
 .sect {
     overflow: hidden;
-    max-height: 0%;
-}
-
-
-.show {
-    max-height: 100%;
-    display: block;
+    display: none;
 }
 
 .sect img {
