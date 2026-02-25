@@ -11,10 +11,6 @@ function toggleSectionOld(id) {
 }
 
 function toggleSection(btn) {
-    console.log(btn);
-    console.log(btn.parentNode);
-    console.log(btn.parentNode.parentNode);
-    
     var region = btn.parentNode.parentNode;
     var sect = region.childNodes[3];
     var plusminus = btn.childNodes[1].childNodes[1];
@@ -23,9 +19,4 @@ function toggleSection(btn) {
     btn.classList.toggle("open-btn");
     plusminus.classList.toggle("fa-plus");
     plusminus.classList.toggle("fa-minus");
-    if (sect.style.maxHeight) {
-        sect.style.maxHeight = "0px";
-    } else {
-        sect.style.maxHeight = sect.scrollHeight + "px";
-    }
 }

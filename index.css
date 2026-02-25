@@ -7,6 +7,7 @@
     --bg1: #dcc2ac;
     --bg2: #fffcee;
     --bg3: #cbae9c;
+    --bg4: #f1ddcd;
     background-color: #f2ede3;
     overflow: hidden;
     color: var(--text);
@@ -53,11 +54,28 @@ h1 {
     100% {opacity: 100%; top:0px;}
 }
 
+.acc-item {
+    background-color: var(--bg4);
+
+    padding: 5px;
+
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
 .sect {
-    max-height: 0;
+    max-height: 0px;
     overflow: hidden;
-    display: none;
-    transition: max-height 1s ease-out;
+    transition: max-height 0.3s ease-in-out;
+}
+
+
+.show {
+    max-height: 100px;
+    display: block;
+
+    transition: max-height 0.3s;
 }
 
 .sect img {
@@ -71,7 +89,6 @@ h1 {
     border: none;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 10px;
     font-size: 1em;
     display: table;
 }
@@ -79,11 +96,6 @@ h1 {
 .collapse {
     float: right;
 }
-
-.hidden {
-    opacity: 0%;
-}
-
 .open-btn {
     margin-bottom: 0;
 }
@@ -100,11 +112,6 @@ h1 {
 ul {
     list-style-type: none;
     padding: 0;
-}
-
-
-.show {
-    display: flow-root;
 }
 
 .socials.show {
@@ -167,7 +174,3 @@ input {
     background-color: var(--bg3);
     cursor: pointer;
 }
-
-/*.footertxt {
-    color: var(--bg1);
-}*/
