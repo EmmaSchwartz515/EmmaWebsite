@@ -1,4 +1,4 @@
-<li>
+<li class="acc-item">
     <div class="sect-dropdown">
         <button onclick="toggleSection(this)" class="sect-dpdown-btn">
             <?php

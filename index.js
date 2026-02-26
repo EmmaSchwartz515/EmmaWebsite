@@ -11,10 +11,6 @@ function toggleSectionOld(id) {
 }
 
 function toggleSection(btn) {
-    console.log(btn);
-    console.log(btn.parentNode);
-    console.log(btn.parentNode.parentNode);
-    
     var region = btn.parentNode.parentNode;
     var sect = region.childNodes[3];
     var plusminus = btn.childNodes[1].childNodes[1];

@@ -1,0 +1,262 @@
+class Task {
+    text = "Task Text";
+    tags = [];
+}
+
+var USER_username = ""; // USER DATA
+
+var USER_tags_points = new Map(); // USER DATA
+
+var USER_tasks_completed = []; // USER DATA
+
+
+// TODO : Confetti after each task completion
+// TODO : Leaderboard
+// TODO : Update data online
+
+var counter = document.getElementById("counter");
+var curr_task = document.getElementById("currtask");
+var username_holder = document.getElementById("username");
+
+
+var tasks = [];
+
+function makeTask(text, tags) {
+    var task = new Task;
+    task.text = text;
+    task.tags = tags;
+
+    for (const tag of tags) {
+        if (!USER_tags_points.has(tag)) {
+            USER_tags_points.set(tag, 0);
+        }
+    }
+
+    tasks.push(task);
+}
+
+function getCSV(filePath) {
+    var result = null;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", filePath, false);
+    xmlhttp.send();
+    if (xmlhttp.status==200) {
+        result = xmlhttp.responseText;
+    }
+
+    return result;
+}
+
+function populateTasks() {
+    tasksCSV = getCSV("./tasks.csv");
+
+    var lines = tasksCSV.split("\n");
+    for (var line of lines) {
+        var entries = line.split(",");
+
+        var task = new Task();
+        var gotTitle = false;
+        for (var entry of entries) {
+            if (!gotTitle) {
+                task.text = entry;
+                gotTitle = true;
+            } else {
+                task.tags.push(entry);
+            }
+        }
+
+        tasks.push(task);
+    }
+
+    giveTask();
+}
+
+var favor_out_of_comfort_zone = true;
+
+var currentTask = new Task;
+
+function getBestTag(lowestOrHighest) { // -1 for lowest, 1 for highest
+    var curr = -1;
+    var curr_tag = "";
+
+    
+    for (const [tag, tag_points] of USER_tags_points) {
+        if (curr == -1 || lowestOrHighest * tag_points > lowestOrHighest * curr) {
+            curr = tag_points;
+            curr_tag = tag;
+        }
+    }
+    
+    return curr_tag;
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function getTasksFromTag(tag) {
+    shuffle(tasks);
+
+    for (const task of tasks) {
+        if (task.tags.includes(tag)) {
+            return task;
+        }
+    }
+
+    var task = tasks[0];
+
+    if (task == null) {
+        task = new Task;
+        task.text = "No more tasks left to give!"
+    }
+
+    return tasks[0];
+}
+
+function giveTask() {
+    var favored_tag;
+    
+    if (favor_out_of_comfort_zone) {
+        favored_tag = getBestTag(-1); // get tag with lowest points
+    } else {
+        favored_tag = getBestTag(1); // get tag with lowest points
+    }
+
+    currentTask = getTasksFromTag(favored_tag);
+
+    tasks.splice(tasks.indexOf(currentTask), 1);
+
+    if (currentTask == null) {
+        console.error("Error at line 97: Current Task is Null!");
+    } else {
+        curr_task.textContent = currentTask.text;
+    }
+}
+
+function completed() {
+    for (const tag of currentTask.tags) {
+        USER_tags_points.set(tag, USER_tags_points.get(tag) + 1);
+    }
+
+    USER_tasks_completed.push(currentTask);
+
+    updateLeaderboard();
+
+    saveData();
+
+    giveTask();
+}
+
+function notCompleted() {
+    for (const tag of currentTask.tags) {
+        USER_tags_points.set(tag, USER_tags_points.get(tag) + 0.25);
+    }
+
+    updateLeaderboard();
+
+    saveData();
+
+    giveTask();
+}
+
+function updateLeaderboard() {
+    counter.textContent = USER_tasks_completed.length;
+}
+
+function getData(username) {
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var table = JSON.parse(this.responseText);
+
+            for (var i = 0; i < table.length; i++) {
+                var user = table[i].username;
+
+                if (user == username) {
+                    USER_username = user;
+
+                    if (table[i].tags_points == "{}" || table[i.tags_points == "[]"]) {
+                        USER_tags_points = new Map();
+                    } else {
+                        USER_tags_points = new Map(Object.entries(JSON.parse(table[i].tags_points)));
+                    }
+                    
+                    if (table[i].tasks_completed == "{}") {
+                        USER_tasks_completed = [];
+                    } else {
+                        USER_tasks_completed = JSON.parse(table[i].tasks_completed);
+                    }
+
+                    for (var task of USER_tasks_completed) {
+                        tasks.splice(tasks.indexOf(task));
+                    }
+
+                    updateLeaderboard();
+
+                    return;
+                }
+            }
+        }
+    }
+
+    xhttp.open("GET", './query.php?table=user_data', true);
+    xhttp.send();
+}
+
+function getUsername() {
+    if (username_holder.textContent == "") {
+        window.setTimeout(getUsername, 1);
+    } else {
+        return username_holder.textContent;
+    }
+}
+
+function saveData() {
+    // Put data into JSON
+    const arrayToSerialize = [];
+    USER_tags_points.forEach((value, key) => arrayToSerialize.push([key, value]));
+    const tags_points_json = JSON.stringify(arrayToSerialize);
+
+    const tasks_completed_json = JSON.stringify(USER_tasks_completed);
+
+    // xhhtp put data into PHP
+    const xhttp = new XMLHttpRequest();
+
+    var url = './updateuser.php?user=' + USER_username + "&tags_points=" + tags_points_json + "&tasks_completed="
+        + tasks_completed_json;
+
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function setup() {
+    var username = getUsername().trim();
+
+    if (username == undefined) {
+        console.error("Username not defined!");
+        return;
+    }
+
+    getData(username);
+
+    populateTasks();
+
+    updateLeaderboard();
+}
+
+function eraseData() {
+    USER_tags_points = new Map(); // USER DATA
+    USER_tasks_completed = []; // USER DATA
+
+    saveData();
+
+    updateLeaderboard();
+
+    populateTasks();
+}
+
+setup();

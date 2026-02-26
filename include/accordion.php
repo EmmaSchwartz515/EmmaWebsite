@@ -50,7 +50,9 @@
         $_GET["name"] = "projects";
         $_GET["content"] = "
             <div class=\"sect\">
-                <a href=\"../regexcheck/index.php\">Regex Checker</a>
+                <a href=\"../taskgiver/login.php\">Task Giver</a>
+                <a href=\"../rssfeed/calendar.php\">General CI Calendar</a>
+                <a href=\"../rssfeed/holidays.php\">CI Holiday Calendar</a>
             </div>
         ";
         include("accordion-item.php");
