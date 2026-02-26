@@ -10,6 +10,9 @@
     </head>
     <body>
         <?php
+<<<<<<< HEAD
+ ></script>
+=======
             //include("include/header.php");
         ?>
         <main class="main">
@@ -27,6 +30,7 @@
         ?>
 
         <script src="https://kit.fontawesome.com/2bceb4ad9c.js" crossorigin="anonymous"></script>
+>>>>>>> 229e743fa144dc31d4fd2e8aed2095d08ddd7c96
         <script src="./index.js" async defer></script>
     </body>
 </html>
