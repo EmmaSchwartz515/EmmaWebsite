@@ -14,6 +14,7 @@
     --heading: #6f9081;
     --text-dark: #1d6539;
     --link-color: #6f9081;
+    --link-color-clicked: #537e61;
     --text-light: #f4f1ea;
 }
 
@@ -72,14 +73,16 @@ button {
     display: table;
 }
 
-a {
+a,
+a button {
     color: var(--link-color);
     text-decoration-color: var(--link-color);
 }
 
-a button {
-    color: var(--link-color);
-    text-decoration-color: var(--link-color);
+a:visited,
+a:visited button {
+    color: var(--link-color-clicked);
+    text-decoration-color: var(--link-color-clicked);
 }
 
 .main {
