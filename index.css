@@ -77,6 +77,11 @@ a {
     text-decoration-color: var(--link-color);
 }
 
+a button {
+    color: var(--link-color);
+    text-decoration-color: var(--link-color);
+}
+
 .main {
     height: 70%;
     width: 90%;
