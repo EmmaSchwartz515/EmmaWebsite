@@ -81,6 +81,7 @@ a button {
 
 a:visited,
 a:visited button {
+    font-style: italic;
     color: var(--link-color-clicked);
     text-decoration-color: var(--link-color-clicked);
 }
