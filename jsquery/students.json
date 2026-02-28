@@ -1,0 +1,24 @@
+{
+    "students": [
+        {
+            "name":"Leslie Kim",
+            "id":"02314",
+            "major":"Computer Science"
+        },
+        {
+            "name":"Aiden Gonzales",
+            "id":"04214",
+            "major":"Psychology"
+        },
+        {
+            "name":"Adish Fatima",
+            "id":"02401",
+            "major":"English"
+        },
+        {
+            "name":"Penelope Green",
+            "id":"24014",
+            "major":"Mechatronics"
+        }
+    ]
+}

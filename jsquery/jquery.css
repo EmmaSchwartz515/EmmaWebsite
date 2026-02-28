@@ -1,0 +1,7 @@
+.about {
+    min-height: 150px;
+    width: 300px;
+    background-color: lightgreen;
+    text-align: center;
+    padding: 10px;
+}

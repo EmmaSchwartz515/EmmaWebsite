@@ -75,7 +75,7 @@
         <link rel="stylesheet" href="../index.css">
     </head>
     <body>
-        <main class="login">
+        <main class="main">
             <h1>Login</h1>
             <div role="region">
                 <form action="" method="post">
