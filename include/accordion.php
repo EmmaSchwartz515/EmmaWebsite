@@ -53,6 +53,8 @@
                 <a href=\"../taskgiver/login.php\">Task Giver</a>
                 <a href=\"../rssfeed/calendar.php\">General CI Calendar</a>
                 <a href=\"../rssfeed/holidays.php\">CI Holiday Calendar</a>
+                <a href=\"../rssfeed/holidays.php\">JQuery Experiments</a>
+                <a href=\"../rssfeed/holidays.php\">JQuery RSS</a>
             </div>
         ";
         include("accordion-item.php");
