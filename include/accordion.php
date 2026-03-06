@@ -28,13 +28,13 @@
             <ul class=\"sect socials\">
                 <li>
                     <a href=\"https://github.com/SleepiiRaven\">
-                        <img src=\"../images/github-logo.png\" alt=\"GitHub Logo, Clickable.\">
+                        <img src=\"../images/github.svg\" alt=\"GitHub Logo, Clickable.\">
                     </a>
                 </li>
 
                 <li>
                     <a href=\"https://www.linkedin.com/in/emmals/\">
-                        <img src=\"../images/linkedin-logo.png\" alt=\"LinkedIn Logo, Clickable.\">
+                        <img src=\"../images/linkedin.svg\" alt=\"LinkedIn Logo, Clickable.\">
                     </a>
                 </li>
             </ul>
